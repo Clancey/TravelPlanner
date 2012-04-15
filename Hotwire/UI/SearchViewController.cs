@@ -1,6 +1,6 @@
 using System;
 using MonoTouch.UIKit;
-namespace Hotwire
+namespace TravelPlaner
 {
 	public class SearchViewController : UIViewController
 	{

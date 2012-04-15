@@ -1,6 +1,6 @@
 using System;
 using MonoTouch.Dialog;
-namespace Hotwire
+namespace TravelPlaner
 {
 	public class TravelTickerMainViewController : DialogViewController
 	{

@@ -1,8 +1,8 @@
 using System;
 using MonoTouch.UIKit;
-using ClanceysLib;
 using System.Drawing;
-namespace ParkApp
+using ClanceysLib;
+namespace TravelPlaner
 {
 	public class OptionsView : UIView
 	{

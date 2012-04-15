@@ -4,10 +4,10 @@ using System.Linq;
 using MonoTouch.Dialog;
 using MonoTouch.UIKit;
 using System.Globalization;
-using ClanceysLib;
 using MonoTouch.Foundation;
 using MonoTouch.Dialog.Utilities;
-namespace Hotwire
+using ClanceysLib;
+namespace TravelPlaner
 {
 	public class TravelTickerDealElement : Element ,IImageUpdated, IElementSizing
 	{
@@ -15,8 +15,8 @@ namespace Hotwire
 		public Uri ImageUri;
 		public UIImage Image;
 		public UIImage PriceImage;
-		Hotwire.TravelTicker.TravelTickerDeal Deal;
-		public TravelTickerDealElement (Hotwire.TravelTicker.TravelTickerDeal deal) : base (deal.Title)
+		TravelPlaner.TravelTicker.TravelTickerDeal Deal;
+		public TravelTickerDealElement (TravelPlaner.TravelTicker.TravelTickerDeal deal) : base (deal.Title)
 		{
 			Deal = deal;
 			if(Deal.Images.Count == 0)
@@ -128,7 +128,7 @@ namespace Hotwire
 			}
 
 
-			void UpdateLeftImage (Hotwire.TravelTicker.TravelTickerDeal deal)
+			void UpdateLeftImage (TravelPlaner.TravelTicker.TravelTickerDeal deal)
 			{
 				if(leftView == null)
 					leftView = new DealView(deal);
@@ -176,9 +176,9 @@ namespace Hotwire
 			public UILabel Disclaimer {get;set;}
 			private UILabel Detail {get;set;}
 			
-			public DealView(Hotwire.TravelTicker.TravelTickerDeal deal)
+			public DealView(TravelPlaner.TravelTicker.TravelTickerDeal deal)
 			{
-				Hotwire.TravelTicker.DealOfferType DealOffer = deal.DealOffers.DealOffer[0];
+				TravelPlaner.TravelTicker.DealOfferType DealOffer = deal.DealOffers.DealOffer[0];
 				Price = new UILabel();
 				Price.Font = UIFont.BoldSystemFontOfSize(20f);
 				Price.TextColor = UIColor.FromRGB(165,0,1);
@@ -207,7 +207,7 @@ namespace Hotwire
 				
 			}
 			
-			public void Update(Hotwire.TravelTicker.TravelTickerDeal deal)
+			public void Update(TravelPlaner.TravelTicker.TravelTickerDeal deal)
 			{
 					
 			}
@@ -218,8 +218,8 @@ namespace Hotwire
 	
 	public class TravelTickerThemeElement : StringElement
 	{
-		Hotwire.TravelTicker.Theme Theme;
-		public TravelTickerThemeElement(Hotwire.TravelTicker.Theme theme) : base (theme.ThemeName)
+		TravelPlaner.TravelTicker.Theme Theme;
+		public TravelTickerThemeElement(TravelPlaner.TravelTicker.Theme theme) : base (theme.ThemeName)
 		{
 			Theme = theme;
 		}
@@ -236,8 +236,8 @@ namespace Hotwire
 		public static NSString key = new NSString("hotelDealElement");
 		public Uri ImageUri;
 		public UIImage Image;
-		Hotwire.HotelSearch.HotelResult Deal;
-		public HotelResultElement (Hotwire.HotelSearch.HotelResult deal) : base (deal.Title)
+		TravelPlaner.HotelSearch.HotelResult Deal;
+		public HotelResultElement (TravelPlaner.HotelSearch.HotelResult deal) : base (deal.Title)
 		{
 			Deal = deal;
 		}
@@ -306,7 +306,7 @@ namespace Hotwire
 				ContentView.Add (leftView);
 			}
 			
-			void UpdateLeftImage (Hotwire.HotelSearch.HotelResult deal)
+			void UpdateLeftImage (TravelPlaner.HotelSearch.HotelResult deal)
 			{
 				if(leftView == null)
 					leftView = new DealView(deal);
@@ -363,7 +363,7 @@ namespace Hotwire
 		public UILabel Disclaimer {get;set;}
 		private StarView StarView {get;set;}
 		
-		public DealView (RectangleF rect, Hotwire.HotelSearch.HotelResult deal) : base(rect)
+		public DealView (RectangleF rect, TravelPlaner.HotelSearch.HotelResult deal) : base(rect)
 		{
 			Price = new UILabel();
 			Price.Font = UIFont.BoldSystemFontOfSize(20f);
@@ -381,7 +381,7 @@ namespace Hotwire
 			this.AddSubview(StarView);
 		}
 		
-		public DealView(Hotwire.HotelSearch.HotelResult deal) : this(RectangleF.Empty,deal)
+		public DealView(TravelPlaner.HotelSearch.HotelResult deal) : this(RectangleF.Empty,deal)
 		{
 		
 		}
@@ -400,7 +400,7 @@ namespace Hotwire
 			StarView.Frame = starFrame;
 		}
 		
-		public void Update(Hotwire.HotelSearch.HotelResult deal)
+		public void Update(TravelPlaner.HotelSearch.HotelResult deal)
 		{
 			Price.Text = deal.SubTotal.ToString("C0", CultureInfo.CreateSpecificCulture("en-US"));
 		}
@@ -409,8 +409,8 @@ namespace Hotwire
 	
 	public class HotelAmenityElement : StringElement
 	{
-		Hotwire.HotelSearch.Amenity Amenity;
-		public HotelAmenityElement(Hotwire.HotelSearch.Amenity amenity) : base (amenity.Name)
+		TravelPlaner.HotelSearch.Amenity Amenity;
+		public HotelAmenityElement(TravelPlaner.HotelSearch.Amenity amenity) : base (amenity.Name)
 		{
 			Amenity = amenity;
 		}

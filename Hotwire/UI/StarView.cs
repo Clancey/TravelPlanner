@@ -1,8 +1,7 @@
 using System;
 using MonoTouch.UIKit;
 using System.Collections.Generic;
-using ClanceysLib;
-namespace Hotwire
+namespace TravelPlaner
 {
 	public class StarView : UIView
 	{

@@ -17,8 +17,7 @@ using MonoTouch.UIKit;
 using System.Drawing;
 using MonoTouch.iAd;
 using MonoTouch.Foundation;
-using ClanceysLib;
-namespace Hotwire
+namespace TravelPlaner
 {
 
 	public class RotatingTabBar : UITabBarController {

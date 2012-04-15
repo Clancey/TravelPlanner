@@ -2,7 +2,7 @@ using System;
 using MonoTouch.UIKit;
 using System.Drawing;
 using System.Collections.Generic;
-namespace Hotwire
+namespace TravelPlaner
 {
 	public class LoadingImageView : UIImageView
 	{

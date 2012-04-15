@@ -25,7 +25,7 @@ using MonoTouch.Foundation;
 using MonoTouch.UIKit;
 using MonoTouch.Dialog.Utilities;
 
-namespace Hotwire
+namespace TravelPlaner
 {
 	public class ShortProfileView : UIView, IImageUpdated
 	{

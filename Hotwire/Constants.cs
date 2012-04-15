@@ -1,5 +1,5 @@
 using System;
-namespace Hotwire
+namespace TravelPlaner
 {
 	public static class Constants
 	{

@@ -1,11 +1,11 @@
 using System;
-using Hotwire.HotelSearch;
-using ClanceysLib;
+using TravelPlaner.HotelSearch;
 using MonoTouch.Dialog;
 using MonoTouch.UIKit;
 using System.Drawing;
 using System.Globalization;
-namespace Hotwire
+using ClanceysLib;
+namespace TravelPlaner
 {
 	public class HotelDetailView : MyDialogViewController
 	{

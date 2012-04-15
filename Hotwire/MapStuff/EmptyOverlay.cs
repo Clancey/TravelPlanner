@@ -1,6 +1,6 @@
 using System;
 using MonoTouch.MapKit;
-namespace ParkApp
+namespace TravelPlaner
 {
 	public class EmptyOverlay : MKPolygon
 	{

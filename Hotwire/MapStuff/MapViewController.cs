@@ -3,7 +3,6 @@ using MonoTouch.UIKit;
 using System.Collections.Generic;
 using MonoTouch.MapKit;
 using System.Threading;
-using ClanceysLib;
 using MonoTouch.Foundation;
 using System.Linq;
 using MonoTouch.CoreLocation;
@@ -12,7 +11,8 @@ using MapStuff.DrawMap;
 using MonoTouch.ObjCRuntime;
 using System.Xml.Linq;
 using MonoTouch.CoreGraphics;
-namespace Hotwire
+using ClanceysLib;
+namespace TravelPlaner
 {
 	public class MapViewController : UIViewController
 	{
@@ -106,10 +106,10 @@ namespace Hotwire
 			if(showAllNeighborhoods)
 			{
 				foreach(var neighborhood in HotelSearchParser.results.Neighborhoods)
-					map.AddOverlay (MKPolygon.FromCoordinates (neighborhood.Shape.ToArray()));
+					map.AddOverlay (MKPolygon.FromCoordinates (neighborhood.Shape.Select(x=> (CLLocationCoordinate2D)x).ToArray()));
 			}
 			else
-				map.AddOverlay(MKPolygon.FromCoordinates(HotelSearchParser.results.Neighborhoods.Where(x=> x.Id == NeighborhoodId).FirstOrDefault().Shape.ToArray()));
+				map.AddOverlay(MKPolygon.FromCoordinates(HotelSearchParser.results.Neighborhoods.Where(x=> x.Id == NeighborhoodId).FirstOrDefault().Shape.Select(x=> (CLLocationCoordinate2D)x).ToArray()));
 		}
 
 

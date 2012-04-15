@@ -2,7 +2,7 @@ using System;
 using MonoTouch.UIKit;
 using System.Drawing;
 using ClanceysLib;
-namespace Hotwire
+namespace TravelPlaner
 {
 	public static class UITheme
 	{

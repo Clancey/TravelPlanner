@@ -25,7 +25,7 @@ using System.Drawing;
 using MonoTouch.CoreGraphics;
 using MonoTouch.UIKit;
 
-namespace Hotwire
+namespace TravelPlaner
 {
 	public static class Graphics
 	{

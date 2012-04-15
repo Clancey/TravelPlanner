@@ -25,9 +25,8 @@ using MonoTouch.UIKit;
 using MonoTouch.Dialog;
 using MonoTouch.Foundation;
 using System.Drawing;
-using ClanceysLib;
 
-namespace Hotwire
+namespace TravelPlaner
 {
 	public class WebViewController : UIViewController {
 		UIToolbar toolbar;
@@ -89,7 +88,7 @@ namespace Hotwire
 			WebView.LoadFinished += delegate {
 				stopButton.Enabled = false;
 				refreshButton.Enabled = true;
-				Util.PopNetworkActive (); 
+				//Util.PopNetworkActive (); 
 				UpdateNavButtons ();
 				
 				Title = UpdateTitle ();

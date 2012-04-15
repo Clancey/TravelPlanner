@@ -1,9 +1,9 @@
 using System;
-using ClanceysLib;
 using MonoTouch.UIKit;
 using System.Threading;
 using MonoTouch.Dialog;
-namespace Hotwire
+using ClanceysLib;
+namespace TravelPlaner
 {
 	public class HotelViewController : MyDialogViewController
 	{
@@ -22,7 +22,7 @@ namespace Hotwire
 			base.ViewWillAppear(true);
 			if(loading == null)
 			{
-				loading = new MBProgressHUD();
+				loading = new MBProgressHUD(UIApplication.SharedApplication.KeyWindow);
 				loading.RectangleColor = UIColor.White;
 				loading.RectangleBorderColor = UIColor.FromRGB(165,0,1);
 				loading.CustomView = new LoadingImageView();

@@ -2,9 +2,9 @@ using System;
 using MonoTouch.UIKit;
 using MonoTouch.Dialog;
 using System.Threading;
-using Hotwire.TravelTicker;
+using TravelPlaner.TravelTicker;
 using ClanceysLib;
-namespace Hotwire
+namespace TravelPlaner
 {
 	public class TravelTickerViewController : MyDialogViewController
 	{
@@ -23,7 +23,7 @@ namespace Hotwire
 			base.ViewWillAppear(true);
 			if(loading == null)
 			{
-				loading = new MBProgressHUD();
+				loading = new MBProgressHUD(UIApplication.SharedApplication.KeyWindow);
 				loading.RectangleColor = UIColor.White;
 				loading.RectangleBorderColor = UIColor.FromRGB(165,0,1);
 				loading.CustomView = new LoadingImageView();

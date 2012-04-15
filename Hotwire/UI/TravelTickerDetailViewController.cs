@@ -1,11 +1,11 @@
 using System;
-using Hotwire.TravelTicker;
+using TravelPlaner.TravelTicker;
 using MonoTouch.Dialog;
 using MonoTouch.UIKit;
 using System.Drawing;
-using ClanceysLib;
 using System.Linq;
-namespace Hotwire
+using ClanceysLib;
+namespace TravelPlaner
 {
 	public class TravelTickerDetailViewController : MyDialogViewController 
 	{

@@ -4,8 +4,10 @@
 <dict>
 	<key>MinimumOSVersion</key>
 	<string>3.0</string>
-	<key>NSMainNibFile</key>
-	<string>MainWindow</string>
+	<key>UIDeviceFamily</key>
+	<array>
+		<integer>1</integer>
+	</array>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>

@@ -1,10 +1,10 @@
 using System;
 using MonoTouch.Dialog;
-using ClanceysLib;
 using MonoTouch.UIKit;
 using MonoTouch.Foundation;
 using System.Drawing;
-namespace Hotwire
+using ClanceysLib;
+namespace TravelPlaner
 {
 	public class HotelSearchDialogViewController : MyDialogViewController
 	{
@@ -34,6 +34,8 @@ namespace Hotwire
 			endDateElement = new DateElement("Check-out",DateTime.Today.AddDays(1));
 			endDateElement.closeOnSelect = true;
 			searchButton = new ButtonElement("Find a hotel",UITheme.IconColor, delegate{
+				destElement.entry.BecomeFirstResponder();
+				destElement.entry.ResignFirstResponder();
 				Search();
 			});
 			

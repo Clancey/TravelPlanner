@@ -1,6 +1,6 @@
 using System;
 using MonoTouch.Dialog;
-namespace ParkApp
+namespace TravelPlaner
 {
 	public class MapListViewDvc : DialogViewController
 	{
