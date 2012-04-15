@@ -64,7 +64,6 @@ namespace TravelPlaner
 				
 			};
 			TableView.BackgroundView = new BackGroundView(UITheme.BackgroundImage,null,100);
-			TableView.TableHeaderView = new UIImageView(UITheme.hotwireLogo);
 		}
 		private void Search()
 		{

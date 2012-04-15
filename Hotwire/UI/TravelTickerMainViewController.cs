@@ -16,7 +16,7 @@ namespace TravelPlaner
 			{
 				section	
 			};
-			this.TableView.BackgroundView = new BackGroundView(UITheme.BackgroundImage,UITheme.hotwireLogo,100);
+			this.TableView.BackgroundView = new BackGroundView(UITheme.BackgroundImage,null,100);
 		}
 		
 		public override void ViewWillAppear (bool animated)
