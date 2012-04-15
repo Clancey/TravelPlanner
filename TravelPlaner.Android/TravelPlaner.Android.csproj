@@ -91,5 +91,6 @@
   <ItemGroup>
     <Folder Include="Data\" />
     <Folder Include="XmlParsers\" />
+    <Folder Include="UI\" />
   </ItemGroup>
 </Project>

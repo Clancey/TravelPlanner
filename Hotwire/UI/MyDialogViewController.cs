@@ -12,7 +12,7 @@ namespace TravelPlaner
 		public override void ViewWillAppear (bool animated)
 		{
 			base.ViewWillAppear (animated);			
-			this.SearchBarTintColor = UITheme.NavigationTint;
+			//this.SearchBarTintColor = UITheme.NavigationTint;
 			this.NavigationController.NavigationBar.TintColor = UITheme.NavigationTint;
 		}
 	}

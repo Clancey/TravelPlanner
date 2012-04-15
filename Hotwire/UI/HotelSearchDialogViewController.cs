@@ -9,8 +9,8 @@ namespace TravelPlaner
 	public class HotelSearchDialogViewController : MyDialogViewController
 	{
 		private EntryElement destElement;
-		private DateElement startDateElement;
-		private DateElement endDateElement;
+		private CalendarElement startDateElement;
+		private CalendarElement endDateElement;
 		private ButtonElement searchButton;
 		private ComboBoxElement roomsElement;
 		private ComboBoxElement adultsElement;
@@ -19,23 +19,23 @@ namespace TravelPlaner
 		public HotelSearchDialogViewController () : base(null,false)
 		{
 			destElement = new EntryElement("Destination","Address,Zip,City, or Airport","");
-			destElement.TextAlignment = UITextAlignment.Right;
-			startDateElement = new DateElement("Check-in",DateTime.Today);
+			//destElement.TextAlignment = UITextAlignment.Right;
+			startDateElement = new CalendarElement("Check-in",DateTime.Today);
 			startDateElement.closeOnSelect = true;
 			startDateElement.OnDateSelected += delegate{
 				if(startDateElement.DateValue >= endDateElement.DateValue)
 				{
 					endDateElement.DateValue = startDateElement.DateValue.AddDays(1);
-					endDateElement.Reload();
+					//endDateElement.Reload();
 					
 					
 				}
 			};
-			endDateElement = new DateElement("Check-out",DateTime.Today.AddDays(1));
+			endDateElement = new CalendarElement("Check-out",DateTime.Today.AddDays(1));
 			endDateElement.closeOnSelect = true;
 			searchButton = new ButtonElement("Find a hotel",UITheme.IconColor, delegate{
-				destElement.entry.BecomeFirstResponder();
-				destElement.entry.ResignFirstResponder();
+				destElement.BecomeFirstResponder(false);
+				destElement.ResignFirstResponder(false);
 				Search();
 			});
 			
@@ -72,7 +72,7 @@ namespace TravelPlaner
 			{
 				var alert = new UIAlertView("Error","Please enter a destination",null,"Ok");
 				alert.Clicked += delegate {
-					destElement.entry.BecomeFirstResponder();
+					destElement.BecomeFirstResponder(true);
 				};
 				alert.Show();
 				return;

@@ -66,6 +66,7 @@
     <Reference Include="monotouch" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Xml.Linq" />
+    <Reference Include="MonoTouch.Dialog-1" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
@@ -128,11 +129,7 @@
     <Folder Include="XmlParsers\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\MonoTouch.Dialog\MonoTouch.Dialog\MonoTouch.Dialog.csproj">
-      <Project>{3FFBFFF8-5560-4EDE-82E5-3FFDFBBA8A50}</Project>
-      <Name>MonoTouch.Dialog</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\ClanceysLib\ClanceysLib\ClanceysLib.csproj">
+    <ProjectReference Include="..\..\ClanceyLib\ClanceysLib\ClanceysLib.csproj">
       <Project>{D7BF0006-ABE7-42FC-9D36-CCEAD42CB4DC}</Project>
       <Name>ClanceysLib</Name>
     </ProjectReference>

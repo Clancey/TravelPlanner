@@ -33,7 +33,7 @@ namespace TravelPlaner
 			
 		}
 		
-		public override MonoTouch.UIKit.UITableViewCell GetCell (DialogViewController dvc, MonoTouch.UIKit.UITableView tv)
+		public override MonoTouch.UIKit.UITableViewCell GetCell (MonoTouch.UIKit.UITableView tv)
 		{
 			var cell = tv.DequeueReusableCell(key) as DealCellView;
 			//if(cell == null)
@@ -61,7 +61,7 @@ namespace TravelPlaner
 			}
 			
 			this.Image = ImageLoader.DefaultRequestImage (ImageUri, this);
-			this.Reload();
+			//this.Reload();
 		}
 		#endregion
 		
@@ -242,7 +242,7 @@ namespace TravelPlaner
 			Deal = deal;
 		}
 		
-		public override MonoTouch.UIKit.UITableViewCell GetCell (DialogViewController dvc, MonoTouch.UIKit.UITableView tv)
+		public override MonoTouch.UIKit.UITableViewCell GetCell (MonoTouch.UIKit.UITableView tv)
 		{
 			var cell = tv.DequeueReusableCell(key) as DealCellView;
 			if(cell == null)
