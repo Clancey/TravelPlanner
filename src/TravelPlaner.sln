@@ -5,11 +5,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TravelPlaner.Android", "Tra
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TravelPlanner.Core", "TravelPlanner.Core\TravelPlanner.Core.csproj", "{B1A0964E-105D-4A06-9230-4C33D0538DE3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClanceysLib", "..\submodules\ClanceyLib\ClanceysLib\ClanceysLib.csproj", "{D7BF0006-ABE7-42FC-9D36-CCEAD42CB4DC}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MonoDroid.Dialog", "..\submodules\MonoDroid.Dialog\MonoDroid.Dialog\MonoDroid.Dialog.csproj", "{33044C7B-47A4-4113-A61A-EB429407F818}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TravelPlaner.iOS", "TravelPlaner.iOS\TravelPlaner.iOS.csproj", "{67D82D26-BA6C-48F7-A691-5B441D3D7455}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClanceysLib", "..\ClanceyLib\ClanceysLib\ClanceysLib.csproj", "{D7BF0006-ABE7-42FC-9D36-CCEAD42CB4DC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MonoDroid.Dialog", "..\MonoDroid.Dialog\MonoDroid.Dialog\MonoDroid.Dialog.csproj", "{33044C7B-47A4-4113-A61A-EB429407F818}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
