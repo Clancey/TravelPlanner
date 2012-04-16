@@ -47,11 +47,15 @@
     <Reference Include="TravelPlanner.Core">
       <HintPath>..\..\lib\TravelPlanner.Core.dll</HintPath>
     </Reference>
+    <Reference Include="OpenTK" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Activity1.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UI\HotelSearchController.cs" />
+    <Compile Include="UI\CustomElements.cs" />
+    <Compile Include="UI\Theme.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -62,6 +66,11 @@
     <AndroidResource Include="Resources\layout\Main.axml" />
     <AndroidResource Include="Resources\values\Strings.xml" />
     <AndroidResource Include="Resources\drawable\Icon.png" />
+    <AndroidResource Include="Resources\drawable\btn_black.xml" />
+    <AndroidResource Include="Resources\drawable\btn_blue.xml" />
+    <AndroidResource Include="Resources\drawable\btn_gray.xml" />
+    <AndroidResource Include="Resources\drawable\btn_red.xml" />
+    <AndroidResource Include="Resources\drawable\btn_yellow.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
   <ItemGroup>
