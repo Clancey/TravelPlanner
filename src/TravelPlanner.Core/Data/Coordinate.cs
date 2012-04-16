@@ -16,7 +16,7 @@ using System;
 
 namespace TravelPlaner
 {
-	public class Coordinate
+	public partial class Coordinate
 	{
 		public Coordinate ()
 		{
@@ -28,13 +28,8 @@ namespace TravelPlaner
 		}
 		public double Latitude{get;set;}
 		public double Longitude {get;set;}
-		
-#if MONOTOUCH
-		public static implicit operator MonoTouch.CoreLocation.CLLocationCoordinate2D(Coordinate c) 
-		{
-			return new MonoTouch.CoreLocation.CLLocationCoordinate2D(c.Latitude,c.Longitude);
-		}
-#endif
+	
 	}
+	
 }
 

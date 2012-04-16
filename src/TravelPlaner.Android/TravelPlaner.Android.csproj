@@ -44,32 +44,14 @@
     <Reference Include="System.Core" />
     <Reference Include="Mono.Android" />
     <Reference Include="System.Xml.Linq" />
+    <Reference Include="TravelPlanner.Core">
+      <HintPath>..\..\lib\TravelPlanner.Core.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Activity1.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="..\Shared\Data\DataAccess.cs">
-      <Link>Data\DataAccess.cs</Link>
-    </Compile>
-    <Compile Include="..\Shared\Data\HotelSearchResults.cs">
-      <Link>Data\HotelSearchResults.cs</Link>
-    </Compile>
-    <Compile Include="..\Shared\Data\Punycode.cs">
-      <Link>Data\Punycode.cs</Link>
-    </Compile>
-    <Compile Include="..\Shared\Data\TravelTickerSearchResults.cs">
-      <Link>Data\TravelTickerSearchResults.cs</Link>
-    </Compile>
-    <Compile Include="..\Shared\XmlParsers\HotelSearchParser.cs">
-      <Link>XmlParsers\HotelSearchParser.cs</Link>
-    </Compile>
-    <Compile Include="..\Shared\XmlParsers\TravelTickerParser.cs">
-      <Link>XmlParsers\TravelTickerParser.cs</Link>
-    </Compile>
-    <Compile Include="..\Shared\Data\Coordinate.cs">
-      <Link>Data\Coordinate.cs</Link>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -83,14 +65,12 @@
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
   <ItemGroup>
-    <ProjectReference Include="..\..\MonoDroid.Dialog\MonoDroid.Dialog\MonoDroid.Dialog.csproj">
+    <Folder Include="UI\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\submodules\MonoDroid.Dialog\MonoDroid.Dialog\MonoDroid.Dialog.csproj">
       <Project>{33044C7B-47A4-4113-A61A-EB429407F818}</Project>
       <Name>MonoDroid.Dialog</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Data\" />
-    <Folder Include="XmlParsers\" />
-    <Folder Include="UI\" />
   </ItemGroup>
 </Project>

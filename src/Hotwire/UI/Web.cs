@@ -25,6 +25,7 @@ using MonoTouch.UIKit;
 using MonoTouch.Dialog;
 using MonoTouch.Foundation;
 using System.Drawing;
+using Mono.Util;
 
 namespace TravelPlaner
 {
@@ -148,7 +149,8 @@ namespace TravelPlaner
 					int i = 0;
 					
 					foreach (var s in segments)
-						encoded [i++] = Mono.Util.Punycode.Encode (s.ToLower ());
+						encoded [i++] = Punycode.Encode (s.ToLower ());
+					
 					
 					return "xn--" + string.Join (".", encoded);
 				}

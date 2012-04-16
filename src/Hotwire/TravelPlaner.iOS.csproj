@@ -98,27 +98,7 @@
     <Compile Include="MapStuff\OptionsView.cs" />
     <Compile Include="MapStuff\PointAnnotation.cs" />
     <Compile Include="UI\CarSearchDialogViewController.cs" />
-    <Compile Include="..\Shared\Data\DataAccess.cs">
-      <Link>Data\DataAccess.cs</Link>
-    </Compile>
-    <Compile Include="..\Shared\Data\HotelSearchResults.cs">
-      <Link>Data\HotelSearchResults.cs</Link>
-    </Compile>
-    <Compile Include="..\Shared\Data\Punycode.cs">
-      <Link>Data\Punycode.cs</Link>
-    </Compile>
-    <Compile Include="..\Shared\Data\TravelTickerSearchResults.cs">
-      <Link>Data\TravelTickerSearchResults.cs</Link>
-    </Compile>
-    <Compile Include="..\Shared\XmlParsers\HotelSearchParser.cs">
-      <Link>XmlParsers\HotelSearchParser.cs</Link>
-    </Compile>
-    <Compile Include="..\Shared\XmlParsers\TravelTickerParser.cs">
-      <Link>XmlParsers\TravelTickerParser.cs</Link>
-    </Compile>
-    <Compile Include="..\Shared\Data\Coordinate.cs">
-      <Link>Data\Coordinate.cs</Link>
-    </Compile>
+    <Compile Include="Data\Coordinate.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
@@ -126,13 +106,6 @@
     <Folder Include="Images\" />
     <Folder Include="MapStuff\" />
     <Folder Include="Data\" />
-    <Folder Include="XmlParsers\" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\ClanceyLib\ClanceysLib\ClanceysLib.csproj">
-      <Project>{D7BF0006-ABE7-42FC-9D36-CCEAD42CB4DC}</Project>
-      <Name>ClanceysLib</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Images\car_icon.jpg" />
@@ -264,5 +237,15 @@
     <Content Include="Images\forward.png" />
     <Content Include="Images\forward%402x.png" />
     <Content Include="Images\car_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\submodules\ClanceyLib\ClanceysLib\ClanceysLib.csproj">
+      <Project>{D7BF0006-ABE7-42FC-9D36-CCEAD42CB4DC}</Project>
+      <Name>ClanceysLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TravelPlanner.Core\TravelPlanner.Core.csproj">
+      <Project>{B1A0964E-105D-4A06-9230-4C33D0538DE3}</Project>
+      <Name>TravelPlanner.Core</Name>
+    </ProjectReference>
   </ItemGroup>
 </Project>

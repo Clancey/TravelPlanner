@@ -12,6 +12,7 @@ using MonoTouch.ObjCRuntime;
 using System.Xml.Linq;
 using MonoTouch.CoreGraphics;
 using ClanceysLib;
+
 namespace TravelPlaner
 {
 	public class MapViewController : UIViewController
@@ -22,7 +23,7 @@ namespace TravelPlaner
 		public UISegmentedControl switcher;
 		public MBProgressHUD progress;
 		public MKMapRect maxRect;
-		public bool LockMap = false;		
+		public bool LockMap = false;
 		private bool showAllNeighborhoods;
 		private string NeighborhoodId;
 		
@@ -95,7 +96,8 @@ namespace TravelPlaner
 				var height =  maxLong - minLong;
 				if(height < 0)
 					height *=-1;
-				return new MKCoordinateRegion (neighborHood.Centeroid, new MKCoordinateSpan (width, height));
+				return new MKCoordinateRegion (neighborHood.Centeroid.ToNativeCoordinate(), new MKCoordinateSpan (width, height));
+				
 			}
 			
 		}
@@ -106,10 +108,10 @@ namespace TravelPlaner
 			if(showAllNeighborhoods)
 			{
 				foreach(var neighborhood in HotelSearchParser.results.Neighborhoods)
-					map.AddOverlay (MKPolygon.FromCoordinates (neighborhood.Shape.Select(x=> (CLLocationCoordinate2D)x).ToArray()));
+					map.AddOverlay (MKPolygon.FromCoordinates (neighborhood.Shape.Select(x=> (CLLocationCoordinate2D)x.ToNativeCoordinate()).ToArray()));
 			}
 			else
-				map.AddOverlay(MKPolygon.FromCoordinates(HotelSearchParser.results.Neighborhoods.Where(x=> x.Id == NeighborhoodId).FirstOrDefault().Shape.Select(x=> (CLLocationCoordinate2D)x).ToArray()));
+				map.AddOverlay(MKPolygon.FromCoordinates(HotelSearchParser.results.Neighborhoods.Where(x=> x.Id == NeighborhoodId).FirstOrDefault().Shape.Select(x=> (CLLocationCoordinate2D)x.ToNativeCoordinate()).ToArray()));
 		}
 
 

@@ -2,10 +2,11 @@ using System;
 
 namespace TravelPlaner
 {
-	public class Coordinate
+	public static class CoordinateExtensions
 	{
-		public Coordinate ()
+		public static MonoTouch.CoreLocation.CLLocationCoordinate2D ToNativeCoordinate(this Coordinate c) 
 		{
+			return new MonoTouch.CoreLocation.CLLocationCoordinate2D(c.Latitude,c.Longitude);
 		}
 	}
 }

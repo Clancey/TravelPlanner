@@ -35,12 +35,8 @@ using System;
 using System.Text;
 
 namespace Mono.Util {
-#if MONO_PUNYCODE_PUBLIC
-public
-#else
-internal
-#endif
-	static class Punycode {
+	
+public static class Punycode {
 		const int BASE = 36;
 		const int DAMP = 700;
 		const int TMIN = 1;

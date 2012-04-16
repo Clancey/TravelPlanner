@@ -23,13 +23,21 @@ namespace TravelPlaner
 			TableView.BackgroundView = new BackGroundView(UITheme.BackgroundImage,null,100);
 		}
 		
+		public override void ViewDidLoad ()
+		{
+			base.ViewDidLoad ();
+			
+		}
+		
 		public override void ViewWillAppear (bool animated)
 		{
+			base.ViewDidAppear(animated);
+			
 			//this.tableView.BackgroundColor = UIColor.FromPatternImage(Images.UIStockImageUnderPageBackground);
 		}
 		public override void ViewDidAppear (bool animated)
-		{		
-			
+		{
+			base.ViewDidAppear(animated);
 		}
 		
 		void CreateUI ()

@@ -45,6 +45,7 @@ namespace TravelPlaner
 			var x = (Frame.Width - centeredRect.Width)/2;
 			if(CenteredImage != null)
 				CenteredImage.Frame = CenteredImage.Frame.SetLocation(new PointF(x,ImageH));
+				
 			
 			
 		}
