@@ -1,8 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TravelPlaner.iOS", "Hotwire\TravelPlaner.iOS.csproj", "{67D82D26-BA6C-48F7-A691-5B441D3D7455}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TravelPlaner.Android", "TravelPlaner.Android\TravelPlaner.Android.csproj", "{0B09F588-8BC7-4708-8AB2-2233A6E1F85B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TravelPlanner.Core", "TravelPlanner.Core\TravelPlanner.Core.csproj", "{B1A0964E-105D-4A06-9230-4C33D0538DE3}"
@@ -10,6 +8,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClanceysLib", "..\submodules\ClanceyLib\ClanceysLib\ClanceysLib.csproj", "{D7BF0006-ABE7-42FC-9D36-CCEAD42CB4DC}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MonoDroid.Dialog", "..\submodules\MonoDroid.Dialog\MonoDroid.Dialog\MonoDroid.Dialog.csproj", "{33044C7B-47A4-4113-A61A-EB429407F818}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TravelPlaner.iOS", "TravelPlaner.iOS\TravelPlaner.iOS.csproj", "{67D82D26-BA6C-48F7-A691-5B441D3D7455}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -65,14 +65,26 @@ Global
 		{33044C7B-47A4-4113-A61A-EB429407F818}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
 		{33044C7B-47A4-4113-A61A-EB429407F818}.Release-Lite|iPhone.ActiveCfg = Debug|Any CPU
 		{33044C7B-47A4-4113-A61A-EB429407F818}.Release-Lite|iPhone.Build.0 = Debug|Any CPU
+		{67D82D26-BA6C-48F7-A691-5B441D3D7455}.AdHoc|iPhone.ActiveCfg = Debug|iPhone
+		{67D82D26-BA6C-48F7-A691-5B441D3D7455}.AdHoc|iPhone.Build.0 = Debug|iPhone
+		{67D82D26-BA6C-48F7-A691-5B441D3D7455}.AdHoc|iPhoneSimulator.ActiveCfg = Debug|iPhoneSimulator
+		{67D82D26-BA6C-48F7-A691-5B441D3D7455}.AdHoc|iPhoneSimulator.Build.0 = Debug|iPhoneSimulator
+		{67D82D26-BA6C-48F7-A691-5B441D3D7455}.AppStore|iPhoneSimulator.ActiveCfg = Debug|iPhoneSimulator
+		{67D82D26-BA6C-48F7-A691-5B441D3D7455}.AppStore|iPhoneSimulator.Build.0 = Debug|iPhoneSimulator
+		{67D82D26-BA6C-48F7-A691-5B441D3D7455}.AppStore-Lite|iPhone.ActiveCfg = Debug|iPhone
+		{67D82D26-BA6C-48F7-A691-5B441D3D7455}.AppStore-Lite|iPhone.Build.0 = Debug|iPhone
 		{67D82D26-BA6C-48F7-A691-5B441D3D7455}.Debug|iPhone.ActiveCfg = Debug|iPhone
 		{67D82D26-BA6C-48F7-A691-5B441D3D7455}.Debug|iPhone.Build.0 = Debug|iPhone
 		{67D82D26-BA6C-48F7-A691-5B441D3D7455}.Debug|iPhoneSimulator.ActiveCfg = Debug|iPhoneSimulator
 		{67D82D26-BA6C-48F7-A691-5B441D3D7455}.Debug|iPhoneSimulator.Build.0 = Debug|iPhoneSimulator
+		{67D82D26-BA6C-48F7-A691-5B441D3D7455}.Debug-Lite|iPhoneSimulator.ActiveCfg = Debug|iPhoneSimulator
+		{67D82D26-BA6C-48F7-A691-5B441D3D7455}.Debug-Lite|iPhoneSimulator.Build.0 = Debug|iPhoneSimulator
 		{67D82D26-BA6C-48F7-A691-5B441D3D7455}.Release|iPhone.ActiveCfg = Release|iPhone
 		{67D82D26-BA6C-48F7-A691-5B441D3D7455}.Release|iPhone.Build.0 = Release|iPhone
 		{67D82D26-BA6C-48F7-A691-5B441D3D7455}.Release|iPhoneSimulator.ActiveCfg = Release|iPhoneSimulator
 		{67D82D26-BA6C-48F7-A691-5B441D3D7455}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
+		{67D82D26-BA6C-48F7-A691-5B441D3D7455}.Release-Lite|iPhone.ActiveCfg = Debug|iPhone
+		{67D82D26-BA6C-48F7-A691-5B441D3D7455}.Release-Lite|iPhone.Build.0 = Debug|iPhone
 		{B1A0964E-105D-4A06-9230-4C33D0538DE3}.AdHoc|iPhone.ActiveCfg = Debug|Any CPU
 		{B1A0964E-105D-4A06-9230-4C33D0538DE3}.AdHoc|iPhone.Build.0 = Debug|Any CPU
 		{B1A0964E-105D-4A06-9230-4C33D0538DE3}.AdHoc|iPhoneSimulator.ActiveCfg = Debug|Any CPU
@@ -115,6 +127,6 @@ Global
 		{D7BF0006-ABE7-42FC-9D36-CCEAD42CB4DC}.Release-Lite|iPhone.Build.0 = Debug|iPhone
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
-		StartupItem = Hotwire\TravelPlaner.iOS.csproj
+		StartupItem = TravelPlaner.Android\TravelPlaner.Android.csproj
 	EndGlobalSection
 EndGlobal

@@ -239,10 +239,6 @@
     <Content Include="Images\car_icon.png" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\submodules\ClanceyLib\ClanceysLib\ClanceysLib.csproj">
-      <Project>{D7BF0006-ABE7-42FC-9D36-CCEAD42CB4DC}</Project>
-      <Name>ClanceysLib</Name>
-    </ProjectReference>
     <ProjectReference Include="..\TravelPlanner.Core\TravelPlanner.Core.csproj">
       <Project>{B1A0964E-105D-4A06-9230-4C33D0538DE3}</Project>
       <Name>TravelPlanner.Core</Name>
