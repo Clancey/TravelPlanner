@@ -27,7 +27,7 @@ namespace TravelPlanner
 		
 		public override void CreateRoot ()
 		{
-			Root = new RootElement ("Car Search");
+			Root = new RootElement ("Car Search"){new Section()};
 			//PopulateRoot();
 		}
 	}
