@@ -74,6 +74,9 @@
     <Compile Include="..\TravelPlanner.iOS\Shared\UI\HotelViewController.cs">
       <Link>Shared\UI\HotelViewController.cs</Link>
     </Compile>
+    <Compile Include="..\TravelPlanner.iOS\Shared\UI\HotelDetailController.cs">
+      <Link>Shared\UI\HotelDetailController.cs</Link>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />

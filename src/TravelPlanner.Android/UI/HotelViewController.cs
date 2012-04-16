@@ -11,6 +11,7 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using MonoDroid.Dialog;
+using TravelPlanner.HotelSearch;
 
 namespace TravelPlanner
 {
@@ -37,6 +38,11 @@ namespace TravelPlanner
 		private void LoadingComplete()
 		{
 
+		}
+		
+		private void ResultClicked(HotelResult deal)
+		{
+			StateManager.SetObject("CurrentHotelResult",deal);
 		}
 	}
 }

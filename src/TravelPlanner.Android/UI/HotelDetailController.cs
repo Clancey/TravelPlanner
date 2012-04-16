@@ -11,16 +11,18 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using MonoDroid.Dialog;
+using TravelPlanner.HotelSearch;
 
 namespace TravelPlanner
 {
 	[Activity (Label = "Details")]			
-	public class HotelDetailController : BaseActivity
+	public partial class HotelDetailController : BaseActivity
 	{
+		HotelResult Deal;
 		protected override void OnCreate (Bundle bundle)
 		{
 			base.OnCreate (bundle);
-
+			Deal = (HotelResult)StateManager.GetObject("CurrentHotelResult");
 			// Create your application here
 		}
 
@@ -29,6 +31,14 @@ namespace TravelPlanner
 		{
 			Root = new RootElement ("Details"){new Section()};
 			//PopulateRoot();
+		}
+		private void purchase()
+		{
+
+		}
+		private void showMap()
+		{
+
 		}
 	}
 }

@@ -27,6 +27,9 @@ using MonoDroid.Dialog;
 using Android.Graphics;
 using System.IO;
 using System.ComponentModel;
+using TravelPlanner.HotelSearch;
+
+
 namespace TravelPlanner
 {
 	
@@ -120,9 +123,23 @@ namespace TravelPlanner
 
 	public class HotelResultElement : StringElement
 	{
-		public HotelResultElement(TravelPlanner.HotelSearch.HotelResult result) : base(result.Title,result.AveragePricePerNight.ToString("C2"))
+		public HotelResultElement(TravelPlanner.HotelSearch.HotelResult result,bool include,Action tapped) : base(result.Title,result.AveragePricePerNight.ToString("C2"))
 		{
 
+		}
+	}
+	public class HotelAmenityElement : StringElement
+	{
+		TravelPlanner.HotelSearch.Amenity Amenity;
+		public HotelAmenityElement(TravelPlanner.HotelSearch.Amenity amenity) : base (amenity.Name)
+		{
+			Amenity = amenity;
+		}
+	}
+	public class HotelHeaderElement : StringElement
+	{
+		public HotelHeaderElement (HotelResult deal) : base ("")
+		{
 		}
 	}
 }

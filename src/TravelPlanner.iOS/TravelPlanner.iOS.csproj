@@ -104,6 +104,7 @@
     <Compile Include="UI\CarSearchController.cs" />
     <Compile Include="Shared\UI\HotelSearchController.cs" />
     <Compile Include="Shared\UI\HotelViewController.cs" />
+    <Compile Include="Shared\UI\HotelDetailController.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
@@ -244,6 +245,7 @@
     <Content Include="Images\forward.png" />
     <Content Include="Images\forward%402x.png" />
     <Content Include="Images\car_icon.png" />
+    <Content Include="Images\empty.png" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\TravelPlanner.Core\TravelPlanner.Core.csproj">

@@ -45,7 +45,7 @@ namespace TravelPlanner
 			childrenElement = createChildrenElement ();
 
 			var sections = new Section[] {
-				new Section () {
+				new Section ("Search Details") {
 					destElement,
 					startDateElement,
 					endDateElement,

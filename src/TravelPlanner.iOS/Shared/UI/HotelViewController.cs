@@ -41,7 +41,13 @@ namespace TravelPlanner
 
 			if(_result != null)
 			foreach(var deal in _result.Results)
-				section.Add(new HotelResultElement(deal));	
+			{
+				var theDeal = deal;
+				var element = new HotelResultElement(deal,true,delegate{
+					ResultClicked(theDeal);
+				});
+				section.Add(element);	
+			}
 			
 			this.Root.Clear();
 			this.Root.Add(section);

@@ -4,6 +4,9 @@ using System.Threading;
 using MonoTouch.Dialog;
 using ClanceysLib;
 using System.Threading.Tasks;
+using TravelPlanner.HotelSearch;
+
+
 namespace TravelPlanner
 {
 	public partial class HotelViewController : MyDialogViewController
@@ -31,12 +34,7 @@ namespace TravelPlanner
 			_loading.Mode = MBProgressHUDMode.Custom;
 			
 			_loading.Show(true);
-		}
-		
-		public override void ViewDidAppear (bool animated)
-		{
-			base.ViewDidAppear (animated);
-
+			GetData();
 		}
 
 		private void LoadingComplete()
@@ -53,6 +51,10 @@ namespace TravelPlanner
 			BeginInvokeOnMainThread(() => {
 				PopulateRoot();
 			});
+		}
+		private void ResultClicked(HotelResult deal)
+		{
+			ActivateController(new HotelDetailController(deal));
 		}
 	}
 }
