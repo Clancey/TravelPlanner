@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Xml.Linq;
-namespace TravelPlaner.TravelTicker
+namespace TravelPlanner.TravelTicker
 {
 	public class TravelTickerSearchResults
 	{

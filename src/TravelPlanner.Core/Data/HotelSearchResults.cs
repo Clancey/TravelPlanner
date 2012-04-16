@@ -3,7 +3,7 @@ using System.Collections.Generic;
 #if MONOTOUCH
 using MonoTouch.CoreLocation;
 #endif
-namespace TravelPlaner.HotelSearch
+namespace TravelPlanner.HotelSearch
 {
 	public class HotelSearchResults
 	{		

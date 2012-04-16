@@ -2,8 +2,8 @@ using System;
 using System.Xml.Linq;
 using System.Linq;
 using System.Collections.Generic;
-using TravelPlaner.TravelTicker;
-namespace TravelPlaner
+using TravelPlanner.TravelTicker;
+namespace TravelPlanner
 {
 	public static  class TravelTickerParser
 	{

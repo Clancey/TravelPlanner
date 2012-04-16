@@ -8,14 +8,14 @@ using System.IO;
 using System.Xml.Linq;
 using System.Xml;
 
-namespace TravelPlaner
+namespace TravelPlanner
 {
 
 
 	public class DataAccess
 	{
 
-		public static TravelPlaner.TravelTicker.TravelTickerSearchResults FetchTravelTickerResults (string url)
+		public static TravelPlanner.TravelTicker.TravelTickerSearchResults FetchTravelTickerResults (string url)
 		{
 			string formattedUri = String.Format (CultureInfo.InvariantCulture, url);
 			string jsonResponse = GetWebsiteData (formattedUri);
@@ -23,7 +23,7 @@ namespace TravelPlaner
 			return result;
 		}
 				
-		public static TravelPlaner.HotelSearch.HotelSearchResults FetchHotelSearchResults (string url)
+		public static TravelPlanner.HotelSearch.HotelSearchResults FetchHotelSearchResults (string url)
 		{
 			string formattedUri = String.Format (CultureInfo.InvariantCulture, url);
 			string jsonResponse = GetWebsiteData (formattedUri);

@@ -1,11 +1,11 @@
 using System;
-using TravelPlaner.HotelSearch;
+using TravelPlanner.HotelSearch;
 using System.Xml.Linq;
 using System.Linq;
 #if Monotouch
 using MonoTouch.CoreLocation;
 #endif
-namespace TravelPlaner
+namespace TravelPlanner
 {
 	public class HotelSearchParser
 	{

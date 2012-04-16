@@ -14,7 +14,7 @@
 //    limitations under the License.
 using System;
 
-namespace TravelPlaner
+namespace TravelPlanner
 {
 	public partial class Coordinate
 	{
