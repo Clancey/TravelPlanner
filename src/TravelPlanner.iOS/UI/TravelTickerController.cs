@@ -6,12 +6,12 @@ using TravelPlanner.TravelTicker;
 using ClanceysLib;
 namespace TravelPlanner
 {
-	public class TravelTickerViewController : MyDialogViewController
+	public class TravelTickerController : MyDialogViewController
 	{
 		TravelTickerSearchResults result;
 		MBProgressHUD loading; 
 		string Url;
-		public TravelTickerViewController (string url,string title,bool pushing) : base(null,pushing)
+		public TravelTickerController (string url,string title,bool pushing) : base(null,pushing)
 		{
 			Url = url;
 			this.Style = UITableViewStyle.Plain;

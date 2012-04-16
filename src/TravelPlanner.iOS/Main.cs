@@ -16,25 +16,25 @@ namespace TravelPlanner
 		}
 	}
 
-	// The name AppDelegate is referenced in the MainWindow.xib file.
 	[Register("AppDelegate")]
 	public partial class AppDelegate : UIApplicationDelegate
 	{
 		UIWindow window;
 		public RotatingTabBar TabBar;
 		public UINavigationController [] navigationRoots;
-		HotelSearchDialogViewController hotelVC;
-		TravelTickerMainViewController travelTickerVC;
-		CarSearchDialogViewController carVC;
+		HotelSearchController hotelVC;
+		TravelTickerMainController travelTickerVC;
+		CarSearchController carVC;
 		// This method is invoked when the application has loaded its UI and its ready to run
 		public override bool FinishedLaunching (UIApplication app, NSDictionary options)
 		{
 			window = new UIWindow(UIScreen.MainScreen.Bounds);
 			TabBar = new RotatingTabBar(2);
-			hotelVC = new  HotelSearchDialogViewController();
-			travelTickerVC = new TravelTickerMainViewController(false);
-			carVC = new CarSearchDialogViewController();
-			navigationRoots = new UINavigationController[3]{
+			hotelVC = new  HotelSearchController();
+			travelTickerVC = new TravelTickerMainController(false);
+			carVC = new CarSearchController();
+			navigationRoots = new UINavigationController[3] {
+				
 				new UINavigationController (hotelVC) {
 					TabBarItem = new UITabBarItem ("Hotels", UIImage.FromBundle ("search.png"), 0)
 				},
@@ -42,8 +42,9 @@ namespace TravelPlanner
 					TabBarItem = new UITabBarItem ("Car Rentals", UIImage.FromBundle ("Images/car_icon.png"), 1)
 				},
 				new UINavigationController (travelTickerVC) {
-					TabBarItem = new UITabBarItem ("Travel Ticker", UIImage.FromBundle ("news.png"),2)
+					TabBarItem = new UITabBarItem ("Travel Ticker", UIImage.FromBundle ("news.png"), 2)
 				},
+				
 			};
 			TabBar.SetViewControllers (navigationRoots, false);
 			
@@ -51,15 +52,9 @@ namespace TravelPlanner
 			
 			//ImageLoader.DeleteOldFiles(DateTime.Now.AddDays(-1));
 			
-			
 			window.MakeKeyAndVisible ();
 			
 			return true;
-		}
-
-		// This method is required in iPhoneOS 3.0
-		public override void OnActivated (UIApplication application)
-		{
 		}
 	}
 }

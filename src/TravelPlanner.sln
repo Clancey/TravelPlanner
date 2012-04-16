@@ -1,4 +1,4 @@
-﻿
+
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TravelPlanner.Core", "TravelPlanner.Core\TravelPlanner.Core.csproj", "{B1A0964E-105D-4A06-9230-4C33D0538DE3}"
@@ -127,7 +127,7 @@ Global
 		{D7BF0006-ABE7-42FC-9D36-CCEAD42CB4DC}.Release-Lite|iPhone.Build.0 = Debug|iPhone
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
-		StartupItem = TravelPlanner.Android\TravelPlanner.Android.csproj
+		StartupItem = TravelPlanner.iOS\TravelPlanner.iOS.csproj
 		Policies = $0
 		$0.DotNetNamingPolicy = $1
 		$1.DirectoryNamespaceAssociation = None

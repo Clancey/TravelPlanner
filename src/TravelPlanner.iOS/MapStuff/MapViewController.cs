@@ -205,9 +205,9 @@ namespace TravelPlanner
 				{
 					var polygon = (MKPolygon)overlay;
 					var polygonView = new MKPolygonView (polygon);
-					polygonView.FillColor = UITheme.IconColor;
+					polygonView.FillColor = Theme.IconColor;
 					polygonView.Alpha = .3f;
-					polygonView.StrokeColor = UITheme.IconColor;
+					polygonView.StrokeColor = Theme.IconColor;
 					polygonView.LineWidth = 3;
 					overlayView = polygonView;
 				}

@@ -3,71 +3,68 @@ using MonoTouch.UIKit;
 using System.Threading;
 using MonoTouch.Dialog;
 using ClanceysLib;
+using System.Threading.Tasks;
 namespace TravelPlanner
 {
 	public class HotelViewController : MyDialogViewController
 	{
-		MBProgressHUD loading; 
-		string Url;
-		HotelSearch.HotelSearchResults result;
-		public HotelViewController (string url) : base (null,true)
+		string _url;
+		MBProgressHUD _loading;
+		HotelSearch.HotelSearchResults _result;
+		
+		public HotelViewController (string url) : base(new RootElement("Search Results"), true)
 		{
+			this.Root.UnevenRows = true;
 			this.Style = UITableViewStyle.Plain;
-			this.Title = "Search Results";
-			Url = url;	
-		}
-			
-		public override void ViewWillAppear (bool animated)
-		{
-			base.ViewWillAppear(true);
-			if(loading == null)
-			{
-				loading = new MBProgressHUD(UIApplication.SharedApplication.KeyWindow);
-				loading.RectangleColor = UIColor.White;
-				loading.RectangleBorderColor = UIColor.FromRGB(165,0,1);
-				loading.CustomView = new LoadingImageView();
-				loading.TitleText = "Searching...";
-				loading.TextColor = UIColor.FromRGB(165,0,1);
-			
-				loading.Mode = MBProgressHUDMode.Custom;
-			}
-			
-			this.NavigationController.NavigationBar.TintColor = UITheme.NavigationTint;
-			if(result == null)
-				Refresh();
-		}
-		private void Refresh()
-		{
-			loading.Show(true);
-			Thread thread = new Thread(update);	
-			thread.Start();
+			_url = url;
 		}
 		
-		private void update()
+		public override void ViewDidLoad ()
 		{
-			result = DataAccess.FetchHotelSearchResults(Url);
-			this.InvokeOnMainThread(delegate{
-				ReloadUI();
+			base.ViewDidLoad ();
+			this.NavigationController.NavigationBar.TintColor = Theme.NavigationTint;
+			
+			_loading = new MBProgressHUD(UIApplication.SharedApplication.KeyWindow);
+			_loading.RectangleColor = UIColor.White;
+			_loading.RectangleBorderColor = UIColor.FromRGB(165,0,1);
+			_loading.CustomView = new LoadingImageView();
+			_loading.TitleText = "Searching...";
+			_loading.TextColor = UIColor.FromRGB(165,0,1);
+			_loading.Mode = MBProgressHUDMode.Custom;
+			
+			_loading.Show(true);
+		}
+		
+		public override void ViewDidAppear (bool animated)
+		{
+			base.ViewDidAppear (animated);
+			
+			Task.Factory.StartNew(() => {
+				_result = DataAccess.FetchHotelSearchResults(_url);
+				BeginInvokeOnMainThread(() => {
+					ReloadUI();
+				});
 			});
 		}
+		
 		private void ReloadUI()
 		{
-			
-			this.NavigationItem.RightBarButtonItem = new UIBarButtonItem("Map",UIBarButtonItemStyle.Plain,delegate {
+			this.NavigationItem.RightBarButtonItem = new UIBarButtonItem("Map", UIBarButtonItemStyle.Plain, delegate {
 				var mapVc = new MapViewController();
 				this.ActivateController(mapVc);
 			});
 			//Console.WriteLine("update complete");
 			Section section = new Section();
 			
-			foreach(var deal in result.Results)
+			foreach(var deal in _result.Results)
 				section.Add(new HotelResultElement(deal));	
 			
+			this.Root.Clear();
+			this.Root.Add(section);
+			this.Root.TableView.ReloadData();
 			
-			//Console.WriteLine("creating root");
-			Root = new RootElement("Search Results"){section};
-			loading.Hide(true);
-			//Console.WriteLine("reload complete");
+			_loading.Hide(true);
+			
 		}
 		
 	}

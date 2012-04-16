@@ -7,12 +7,12 @@ using System.Linq;
 using ClanceysLib;
 namespace TravelPlanner
 {
-	public class TravelTickerDetailViewController : MyDialogViewController 
+	public class TravelTickerDetailController : MyDialogViewController 
 	{
 		const int PadX = 4;
 		TravelTickerDeal Deal;
 		
-		public TravelTickerDetailViewController (TravelTickerDeal deal) : base (null, true)
+		public TravelTickerDetailController (TravelTickerDeal deal) : base (null, true)
 		{
 			Style = UITableViewStyle.Grouped;
 			this.Title = "Details";
@@ -20,7 +20,7 @@ namespace TravelPlanner
 			Deal = deal;
 			TravelTickerParser.FillTravelTickerDeal(ref Deal);
 			CreateUI ();			
-			TableView.BackgroundView = new BackGroundView(UITheme.BackgroundImage,null,100);
+			TableView.BackgroundView = new BackGroundView(Theme.BackgroundImage,null,100);
 		}
 		
 		public override void ViewDidLoad ()
@@ -46,7 +46,7 @@ namespace TravelPlanner
 			var shortProfileView = new ShortProfileView (profileRect, Deal.Images.Last(),Deal.Title);
 			var purchaseSection = new Section()
 			{
-				new ButtonElement("View on Travel-Ticker",UITheme.IconColor,delegate {
+				new ButtonElement("View on Travel-Ticker",Theme.IconColor,delegate {
 					var web = new WebViewController();
 					web.OpenUrl(this,Constants.GetTravelDealUrl(Deal.EncodedId),Deal.Title);	
 				})
