@@ -15,6 +15,7 @@ namespace TravelPlanner
 		//public static string TravelTickerUrl = "http://thecollaborateapp.com/ws/hotwire/SearchHotWireTravelTicker.php";
 		public static string ThemesUrl = "http://api.hotwire.com/v1/meta/travel-ticker?apikey=" + ApiKey;
 		private static string travelTickerDealUrl = "http://www.travel-ticker.com/supplier-forward?dealId=";
+		
 		public static string GetTravelDealUrl(string encodedId)
 		{
 			return travelTickerDealUrl + encodedId + "&linkshareid=" + LinkShareId;

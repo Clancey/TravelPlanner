@@ -11,7 +11,7 @@ namespace TravelPlanner
 		
 		public override void ViewWillAppear (bool animated)
 		{
-			this.NavigationController.NavigationBar.TintColor = UITheme.NavigationTint;
+			this.NavigationController.NavigationBar.TintColor = Theme.NavigationTint;
 		}
 		
 	}

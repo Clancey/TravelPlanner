@@ -4,7 +4,7 @@ using System.Drawing;
 using ClanceysLib;
 namespace TravelPlanner
 {
-	public static class UITheme
+	public static class Theme
 	{
 		public static UIColor NavigationTint = UIColor.FromRGB(43,49,53);//(0.447f, 0.5f, 0.553f);
 		public static UIColor IconColor = UIColor.FromRGB(156,0,0);//Green;//FromRGB(178,205,102);//

@@ -22,7 +22,7 @@ namespace TravelPlanner
 			if(Deal.Images.Count == 0)
 			{
 				//Console.WriteLine("use car");
-				this.Image = UITheme.car;
+				this.Image = Theme.car;
 			}
 			else
 			{
@@ -46,7 +46,7 @@ namespace TravelPlanner
 		
 		public override void Selected (DialogViewController dvc, UITableView tableView, NSIndexPath path)
 		{
-			dvc.ActivateController(new TravelTickerDetailViewController(Deal));
+			dvc.ActivateController(new TravelTickerDetailController(Deal));
 		}
 
 		#region IImageUpdated implementation
@@ -227,7 +227,7 @@ namespace TravelPlanner
 		{
 			base.Selected (dvc, tableView, path);
 			var url = Constants.TravelTickerUrl + "&theme=" + Theme.ThemeId;
-			dvc.ActivateController(new TravelTickerViewController(url,Theme.ThemeName,true));	
+			dvc.ActivateController(new TravelTickerController(url,Theme.ThemeName,true));	
 		}
 	}
 	
@@ -255,7 +255,7 @@ namespace TravelPlanner
 		
 		public override void Selected (DialogViewController dvc, UITableView tableView, NSIndexPath path)
 		{
-			dvc.ActivateController(new HotelDetailView(Deal));
+			dvc.ActivateController(new HotelDetailController(Deal));
 		}
 		
 		public virtual float GetHeight (UITableView tableView, NSIndexPath indexPath)

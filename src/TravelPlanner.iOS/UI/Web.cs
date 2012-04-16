@@ -41,7 +41,7 @@ namespace TravelPlanner
 			};
 			var flexibleSpace = new UIBarButtonItem (UIBarButtonSystemItem.FlexibleSpace, null);
 
-			toolbar = new UIToolbar (){TintColor = UITheme.NavigationTint};
+			toolbar = new UIToolbar (){TintColor = Theme.NavigationTint};
 
 			
 			//this.NavigationItem.RightBarButtonItem = new UIBarButtonItem (Locale.GetText ("Close"), UIBarButtonItemStyle.Bordered, (o, e) => {  this.NavigationController.PopViewControllerAnimated (true);} );

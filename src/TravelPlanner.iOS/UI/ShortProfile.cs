@@ -47,7 +47,7 @@ namespace TravelPlanner
 		public ShortProfileView (RectangleF rect, string imageUrl, string title) : this (rect, false)
 		{				
 			if(string.IsNullOrEmpty(imageUrl))
-				profilePic.Image = UITheme.car;
+				profilePic.Image = Theme.car;
 			else
 				this.ImageUri = new Uri(imageUrl);
 			Title = title;

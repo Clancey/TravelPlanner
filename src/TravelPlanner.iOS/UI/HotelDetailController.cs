@@ -7,22 +7,22 @@ using System.Globalization;
 using ClanceysLib;
 namespace TravelPlanner
 {
-	public class HotelDetailView : MyDialogViewController
+	public class HotelDetailController : MyDialogViewController
 	{
-		HotelResult Deal;
-		float PadX = 5f;
-		public HotelDetailView (HotelResult deal) : base (null,true)
+		HotelResult _deal;
+		float _padX = 5.0f;
+		
+		public HotelDetailController (HotelResult deal) : base (new RootElement("Details") ,true)
 		{
-			Deal = deal;
-			this.Title = "Details";
-			var header = new HotelHeader( new RectangleF (PadX, 0, View.Bounds.Width-30-PadX*2, 100),deal);
+			_deal = deal;
 			
+			var header = new HotelHeader( new RectangleF (_padX, 0, View.Bounds.Width-30-_padX*2, 100),deal);
 			
 			var detailsSection = new Section("Details");
 			
 			var description =
-				new MultilineElement("",Deal.Neighborhood.Description);
-			if(!string.IsNullOrEmpty(Deal.Neighborhood.Description))
+				new MultilineElement("",_deal.Neighborhood.Description);
+			if(!string.IsNullOrEmpty(_deal.Neighborhood.Description))
 				detailsSection.Add(description);
 			
 			
@@ -43,9 +43,9 @@ namespace TravelPlanner
 				new Section(header),
 				new Section()
 				{
-					new ButtonElement("Purchase",UITheme.IconColor,delegate {
+					new ButtonElement("Purchase",Theme.IconColor,delegate {
 						var web = new WebViewController();
-						web.OpenUrl(this,Deal.Url,Deal.Title);	
+						web.OpenUrl(this,_deal.Url,_deal.Title);	
 					})	
 				},
 				detailsSection,
@@ -63,17 +63,28 @@ namespace TravelPlanner
 			var nights = new StringElement("Nights",deal.Nights.ToString());
 
 			
-			Root.Add(new Section("Aditional Information")
-			         {
+			Root.Add(new Section("Aditional Information") {
 				averagepernight,
 				rooms,
 				nights,
 				taxes,
 				totalPrice,
-				
 			});
 			
-			TableView.BackgroundView = new BackGroundView(UITheme.BackgroundImage,null,100);
+			TableView.BackgroundView = new BackGroundView(Theme.BackgroundImage,null,100);
+		}
+		
+		public override void ViewDidLoad ()
+		{
+			base.ViewDidLoad ();
+			
+			
+
+		}
+		
+		public override void ViewDidAppear (bool animated)
+		{
+			base.ViewDidAppear (animated);
 		}
 		
 		private class HotelHeader : UIView

@@ -79,20 +79,15 @@
     <Compile Include="Main.cs" />
     <Compile Include="UI\RotatingTabBar.cs" />
     <Compile Include="UI\SearchViewController.cs" />
-    <Compile Include="UI\TravelTickerViewController.cs" />
     <Compile Include="UI\Theme.cs" />
     <Compile Include="Constants.cs" />
     <Compile Include="UI\CustomElements.cs" />
-    <Compile Include="UI\TravelTickerDetailViewController.cs" />
     <Compile Include="UI\ShortProfile.cs" />
     <Compile Include="Graphics.cs" />
     <Compile Include="UI\LoadingImageView.cs" />
-    <Compile Include="UI\TravelTickerMainViewController.cs" />
-    <Compile Include="UI\HotelSearchDialogViewController.cs" />
     <Compile Include="UI\MyDialogViewController.cs" />
     <Compile Include="UI\HotelViewController.cs" />
     <Compile Include="UI\StarView.cs" />
-    <Compile Include="UI\HotelDetailView.cs" />
     <Compile Include="UI\Web.cs" />
     <Compile Include="MapStuff\EmptyOverlay.cs" />
     <Compile Include="MapStuff\GeometryAnnotation.cs" />
@@ -101,8 +96,14 @@
     <Compile Include="MapStuff\MapViewController.cs" />
     <Compile Include="MapStuff\OptionsView.cs" />
     <Compile Include="MapStuff\PointAnnotation.cs" />
-    <Compile Include="UI\CarSearchDialogViewController.cs" />
     <Compile Include="Data\Coordinate.cs" />
+    <Compile Include="UI\TravelTickerDetailController.cs" />
+    <Compile Include="UI\TravelTickerMainController.cs" />
+    <Compile Include="UI\TravelTickerController.cs" />
+    <Compile Include="UI\HotelSearchController.cs" />
+    <Compile Include="UI\HotelDetailController.cs" />
+    <Compile Include="UI\CarSearchController.cs" />
+    <Compile Include="Shared\UI\HotelSearchController.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
@@ -110,6 +111,8 @@
     <Folder Include="Images\" />
     <Folder Include="MapStuff\" />
     <Folder Include="Data\" />
+    <Folder Include="Shared\" />
+    <Folder Include="Shared\UI\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Images\car_icon.jpg" />
