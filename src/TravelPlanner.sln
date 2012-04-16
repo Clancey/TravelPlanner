@@ -127,7 +127,7 @@ Global
 		{D7BF0006-ABE7-42FC-9D36-CCEAD42CB4DC}.Release-Lite|iPhone.Build.0 = Debug|iPhone
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
-		StartupItem = TravelPlanner.iOS\TravelPlanner.iOS.csproj
+		StartupItem = TravelPlanner.Android\TravelPlanner.Android.csproj
 		Policies = $0
 		$0.DotNetNamingPolicy = $1
 		$1.DirectoryNamespaceAssociation = None

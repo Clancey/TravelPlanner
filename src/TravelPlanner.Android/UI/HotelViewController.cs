@@ -15,20 +15,28 @@ using MonoDroid.Dialog;
 namespace TravelPlanner
 {
 	[Activity (Label = "HotelViewController")]			
-	public class HotelViewController : BaseActivity
+	public partial class HotelViewController : BaseActivity
 	{
 		protected override void OnCreate (Bundle bundle)
 		{
 			base.OnCreate (bundle);
 
-			// Create your application here
+			_url = Intent.GetStringExtra("SearchUrl");
 		}
 
 		
 		public override void CreateRoot ()
 		{
-			Root = new RootElement ("Search Results");
-			//PopulateRoot();
+			Root = new RootElement ("Search Results"){new Section()};
+			GetData();
+		}
+		private void GetDataComplete()
+		{
+			PopulateRoot();
+		}
+		private void LoadingComplete()
+		{
+
 		}
 	}
 }

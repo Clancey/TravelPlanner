@@ -70,6 +70,10 @@
     <Compile Include="MainActivity.cs" />
     <Compile Include="UI\HotelDetailController.cs" />
     <Compile Include="UI\TravelTickerDetailController.cs" />
+    <Compile Include="Data\StateManager.cs" />
+    <Compile Include="..\TravelPlanner.iOS\Shared\UI\HotelViewController.cs">
+      <Link>Shared\UI\HotelViewController.cs</Link>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -476,6 +480,7 @@
     <Folder Include="UI\" />
     <Folder Include="Shared\" />
     <Folder Include="Resources\drawable\loading\" />
+    <Folder Include="Data\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\MonoDroid.Dialog\MonoDroid.Dialog\MonoDroid.Dialog.csproj">

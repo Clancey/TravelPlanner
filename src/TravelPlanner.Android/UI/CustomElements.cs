@@ -115,5 +115,13 @@ namespace TravelPlanner
 		{
 		}
 	}
+
+	public class HotelResultElement : StringElement
+	{
+		public HotelResultElement(TravelPlanner.HotelSearch.HotelResult result) : base(result.Title,result.AveragePricePerNight.ToString("C2"))
+		{
+
+		}
+	}
 }
 

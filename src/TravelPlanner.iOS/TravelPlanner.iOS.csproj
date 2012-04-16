@@ -103,6 +103,7 @@
     <Compile Include="UI\HotelDetailController.cs" />
     <Compile Include="UI\CarSearchController.cs" />
     <Compile Include="Shared\UI\HotelSearchController.cs" />
+    <Compile Include="Shared\UI\HotelViewController.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>

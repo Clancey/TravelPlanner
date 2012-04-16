@@ -6,11 +6,9 @@ using ClanceysLib;
 using System.Threading.Tasks;
 namespace TravelPlanner
 {
-	public class HotelViewController : MyDialogViewController
+	public partial class HotelViewController : MyDialogViewController
 	{
-		string _url;
 		MBProgressHUD _loading;
-		HotelSearch.HotelSearchResults _result;
 		
 		public HotelViewController (string url) : base(new RootElement("Search Results"), true)
 		{
@@ -38,35 +36,24 @@ namespace TravelPlanner
 		public override void ViewDidAppear (bool animated)
 		{
 			base.ViewDidAppear (animated);
-			
-			Task.Factory.StartNew(() => {
-				_result = DataAccess.FetchHotelSearchResults(_url);
-				BeginInvokeOnMainThread(() => {
-					ReloadUI();
-				});
-			});
+
 		}
-		
-		private void ReloadUI()
+
+		private void LoadingComplete()
 		{
 			this.NavigationItem.RightBarButtonItem = new UIBarButtonItem("Map", UIBarButtonItemStyle.Plain, delegate {
 				var mapVc = new MapViewController();
 				this.ActivateController(mapVc);
 			});
-			//Console.WriteLine("update complete");
-			Section section = new Section();
-			
-			foreach(var deal in _result.Results)
-				section.Add(new HotelResultElement(deal));	
-			
-			this.Root.Clear();
-			this.Root.Add(section);
-			this.Root.TableView.ReloadData();
-			
 			_loading.Hide(true);
-			
 		}
-		
+
+		private void GetDataComplete()
+		{
+			BeginInvokeOnMainThread(() => {
+				PopulateRoot();
+			});
+		}
 	}
 }
 
