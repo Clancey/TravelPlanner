@@ -4,8 +4,7 @@ namespace TravelPlanner
 	public static class Constants
 	{
 		public static string ApiKey = "jg94e4du6dcae5uqwfuhmm9p";
-		public static string LinkShareId = "BJaziy6Rv6A";
-		private static string staticParams = "?apikey=" + ApiKey + "&linkshareid=" + LinkShareId;// + "&format=JSON";
+		private static string staticParams = "?linkshareid=BJaziy6Rv6A&apikey=" + ApiKey;// + "&format=JSON";
 		
 		public static string HotelUrl = "http://api.hotwire.com/v1/search/hotel" + staticParams;
 		
@@ -18,8 +17,9 @@ namespace TravelPlanner
 		
 		public static string GetTravelDealUrl(string encodedId)
 		{
-			return travelTickerDealUrl + encodedId + "&linkshareid=" + LinkShareId;
+			return travelTickerDealUrl + encodedId + "&linkshareid=BJaziy6Rv6A";
 		}
+		public static string HotelSearchUrl = HotelUrl + "&dest={0}&startdate={1}&enddate={2}&rooms={3}&adults={4}&children={5}";
 	}
 }
 

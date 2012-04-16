@@ -16,9 +16,13 @@ using System;
 using MonoDroid.Dialog;
 namespace TravelPlanner
 {
-	public class HotelSearchController : DialogActivity
+	public partial class HotelSearchController : DialogActivity
 	{
 		public HotelSearchController ()
+		{
+
+		}
+		public void Search()
 		{
 
 		}

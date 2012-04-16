@@ -35,3 +35,6 @@ LOCAL.*
 REMOTE.*
 BASE.*
 *.DS_Store
+lib/TravelPlanner.Core.dll.mdb
+
+lib/TravelPlanner.Core.dll

@@ -15,7 +15,7 @@
 using System;
 namespace TravelPlanner
 {
-	public class Theme
+	public static class Theme
 	{
 		public static ButtonElement.ButtonColor IconColor = ButtonElement.ButtonColor.Red;
 	}

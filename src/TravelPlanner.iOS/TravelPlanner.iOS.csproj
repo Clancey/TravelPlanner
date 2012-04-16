@@ -80,7 +80,6 @@
     <Compile Include="UI\RotatingTabBar.cs" />
     <Compile Include="UI\SearchViewController.cs" />
     <Compile Include="UI\Theme.cs" />
-    <Compile Include="Constants.cs" />
     <Compile Include="UI\CustomElements.cs" />
     <Compile Include="UI\ShortProfile.cs" />
     <Compile Include="Graphics.cs" />

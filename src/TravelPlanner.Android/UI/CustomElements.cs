@@ -30,6 +30,7 @@ using System.ComponentModel;
 namespace TravelPlanner
 {
 	
+	public delegate void DateSelected (DateTime date);
 	public class ButtonElement : StringElement
 	{
 		public enum ButtonColor
@@ -96,6 +97,23 @@ namespace TravelPlanner
 			return Caption;
 		}
 	}
-	
+
+	public class CalendarElement : StringElement
+	{
+		public bool closeOnSelect;
+		public DateSelected OnDateSelected;
+		public DateTime DateValue;
+		public CalendarElement(string caption, DateTime date) : base (caption)
+		{
+
+		}
+	}
+
+	public class ComboBoxElement : StringElement
+	{
+		public ComboBoxElement(string caption, object[] Items , string DisplayMember) : base(caption)
+		{
+		}
+	}
 }
 
