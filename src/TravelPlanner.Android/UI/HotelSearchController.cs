@@ -43,6 +43,9 @@ namespace TravelPlanner
 		{
 			Root = new RootElement ("Hotel Search");
 			PopulateRoot();
+			
+			
+
 		}
 	}
 }

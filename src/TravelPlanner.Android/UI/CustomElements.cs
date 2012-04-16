@@ -119,7 +119,7 @@ namespace TravelPlanner
 		public override View GetView (Context context, View convertView, ViewGroup parent)
 		{
 			if(_dateDialog == null) {
-				_dateDialog = new DatePickerDialog(context, OnDateSet, DateValue.Year, DateValue.Month - 1, DateValue.Day);
+				_dateDialog = new DatePickerDialog(context, OnDateSet, DateValue.Year, DateValue.Month, DateValue.Day);
 			}
 			
 			return base.GetView (context, convertView, parent);
@@ -134,7 +134,7 @@ namespace TravelPlanner
 			if(activity != null && _dateDialog != null) {
 				_dateDialog.Show();
 			}
-			else { 
+			else {
 				Console.WriteLine("Invalid Activity");
 			}
 		}
@@ -167,6 +167,8 @@ namespace TravelPlanner
 				throw new ArgumentException("Invalid parameter 'items'.");
 			}
 			
+			
+			
 			_caption = caption;
 			
 			if(string.IsNullOrWhiteSpace(displayMember)) {
@@ -191,6 +193,7 @@ namespace TravelPlanner
 		{
 			base.Selected ();
 			_alertDialog.Show();
+			
 		}
 		
 		private void BuildDialog()
@@ -198,6 +201,8 @@ namespace TravelPlanner
 			if(_alertDialog != null) {
 				return;
 			}
+			
+			
 			
 			var builder = new AlertDialog.Builder(this.GetContext());
 			builder.SetTitle(_caption);
