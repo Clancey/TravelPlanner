@@ -16,7 +16,44 @@ namespace TravelPlanner
 		{
 			_deal = deal;
 			
-			var header = new HotelHeader( new RectangleF (_padX, 0, View.Bounds.Width-30-_padX*2, 100),deal);
+			
+//			Root = new RootElement("Details")
+//			{
+//				new Section(header),
+//				new Section()
+//				{
+//					new ButtonElement("Purchase",Theme.IconColor,delegate {
+//						var web = new WebViewController();
+//						web.OpenUrl(this,_deal.Url,_deal.Title);	
+//					})	
+//				},
+//				detailsSection,
+//				amenities,
+//			};
+//			Root.Add(new Section("Aditional Information") {
+//				averagepernight,
+//				rooms,
+//				nights,
+//				taxes,
+//				totalPrice,
+//			});
+			
+			TableView.BackgroundView = new BackGroundView(Theme.BackgroundImage,null,100);
+		}
+		
+		public override void ViewDidLoad ()
+		{
+			base.ViewDidLoad ();
+			
+			var header = new HotelHeader( new RectangleF (_padX, 0, View.Bounds.Width-30-_padX*2, 100),_deal);
+			var headerSection = new Section(header);
+			
+			var buttonElementSection = new Section() {
+				new ButtonElement("Purchase", Theme.IconColor, delegate {
+					var web = new WebViewController();
+					web.OpenUrl(this, _deal.Url, _deal.Title);	
+				})
+			};
 			
 			var detailsSection = new Section("Details");
 			
@@ -25,58 +62,48 @@ namespace TravelPlanner
 			if(!string.IsNullOrEmpty(_deal.Neighborhood.Description))
 				detailsSection.Add(description);
 			
-			
 			var mapElement = new StringElement("Map",delegate {
-				var mapVC = new MapViewController(deal.Neighborhood.Id);
+				var mapVC = new MapViewController(_deal.Neighborhood.Id);
 				this.ActivateController(mapVC);
 			});
+			
 			detailsSection.Add(mapElement);
 
 			var amenities = new Section("Amenities");
-			foreach(var amenity in deal.Amenties)
+			foreach(var amenity in _deal.Amenties)
 				amenities.Add(new HotelAmenityElement(amenity));
+			
 			var paidAmenities = new Section("Paid amenities");
-			foreach(var amenity in deal.PaidAmenities)
+			foreach(var amenity in _deal.PaidAmenities)
 				paidAmenities.Add(new HotelAmenityElement(amenity));
-			Root = new RootElement("Details")
-			{
-				new Section(header),
-				new Section()
-				{
-					new ButtonElement("Purchase",Theme.IconColor,delegate {
-						var web = new WebViewController();
-						web.OpenUrl(this,_deal.Url,_deal.Title);	
-					})	
-				},
-				detailsSection,
-				amenities,
-			};
+			
 			if(paidAmenities.Count > 0)
 				Root.Add(paidAmenities);
 			
-			var averagepernight = new StringElement("Average per night",deal.AveragePricePerNight.ToString("C2", CultureInfo.CreateSpecificCulture("en-US")));			
-			var taxes = new StringElement("Taxes and Fees",deal.TaxesAndFees.ToString("C2", CultureInfo.CreateSpecificCulture("en-US")));
-			var totalPrice = new StringElement("Total Price",deal.TotalPrice.ToString("C2", CultureInfo.CreateSpecificCulture("en-US")));
+			var averagepernight = new StringElement("Average per night", _deal.AveragePricePerNight.ToString("C2", CultureInfo.CreateSpecificCulture("en-US")));			
+			var taxes = new StringElement("Taxes and Fees", _deal.TaxesAndFees.ToString("C2", CultureInfo.CreateSpecificCulture("en-US")));
+			var totalPrice = new StringElement("Total Price", _deal.TotalPrice.ToString("C2", CultureInfo.CreateSpecificCulture("en-US")));
 			
 			
-			var rooms = new StringElement("Rooms",deal.Rooms.ToString());
-			var nights = new StringElement("Nights",deal.Nights.ToString());
+			var rooms = new StringElement("Rooms", _deal.Rooms.ToString());
+			var nights = new StringElement("Nights", _deal.Nights.ToString());
 
-			
-			Root.Add(new Section("Aditional Information") {
+			var additionalInfoSection = new Section("Aditional Information") {
 				averagepernight,
 				rooms,
 				nights,
 				taxes,
 				totalPrice,
-			});
+			};
 			
-			TableView.BackgroundView = new BackGroundView(Theme.BackgroundImage,null,100);
-		}
-		
-		public override void ViewDidLoad ()
-		{
-			base.ViewDidLoad ();
+			Root.Add(new Section[] {
+				headerSection,
+				buttonElementSection,
+				detailsSection,
+				amenities,
+				additionalInfoSection,
+				
+			});
 			
 			
 

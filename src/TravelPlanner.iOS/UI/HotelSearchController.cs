@@ -10,7 +10,6 @@ namespace TravelPlanner
 	{
 		public HotelSearchController () : base(new RootElement("Search Hotels"),false)
 		{
-			
 		}
 		
 		public override void ViewDidLoad ()
