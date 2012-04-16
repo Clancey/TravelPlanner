@@ -6,7 +6,7 @@ using TravelPlanner.TravelTicker;
 using ClanceysLib;
 namespace TravelPlanner
 {
-	public class TravelTickerController : MyDialogViewController
+	public partial class TravelTickerController : MyDialogViewController
 	{
 		TravelTickerSearchResults result;
 		MBProgressHUD loading; 

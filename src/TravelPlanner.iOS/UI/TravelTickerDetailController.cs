@@ -55,7 +55,7 @@ namespace TravelPlanner
 			var main = new Section (shortProfileView){
 			};
 			var detailsElement = 
-				new MultilineElement("",Deal.ShortDetails);
+				new MultilineElement(Deal.ShortDetails,"");
 			//detailsElement.Font = UIFont.SystemFontOfSize(17f);
 			
 			var summarySection = new Section("Summary")
