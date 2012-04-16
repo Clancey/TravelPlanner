@@ -35,7 +35,6 @@
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
-    <Compile Include="FooClass.cs" />
     <Compile Include="Data\Coordinate.cs" />
     <Compile Include="Data\DataAccess.cs" />
     <Compile Include="Data\HotelSearchResults.cs" />

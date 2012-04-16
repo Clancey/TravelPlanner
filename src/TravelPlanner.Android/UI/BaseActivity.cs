@@ -16,7 +16,6 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-
 using Android.App;
 using Android.Content;
 using Android.OS;
@@ -29,18 +28,31 @@ using Android.Content.PM;
 
 namespace TravelPlanner
 {
-	[Activity (Label = "Hotel Search",ScreenOrientation = ScreenOrientation.Portrait, MainLauncher = true )]
-	public partial class HotelSearchController : BaseActivity
+	
+	public abstract class BaseActivity : Activity
 	{
-		public void Search()
+		public LinearLayout LayoutControl;
+		public Action<int, Result, Intent> ResultReturned {get;set;}
+		public RootElement Root;
+		DialogView dv;
+		protected override void OnCreate (Bundle bundle)
 		{
-
+			base.OnCreate (bundle);
+			//Settings.Setup(this);
+			SetContentView (Resource.Layout.Main);			
+			LayoutControl = FindViewById<LinearLayout> (Resource.Id.linerLayout);
+			CreateRoot();
+			var dv = new DialogView(this,Root);
+			LayoutControl.AddView (dv);
 		}
-		public override void CreateRoot ()
+		protected override void OnActivityResult (int requestCode, Result resultCode, Intent data)
 		{
-			Root = new RootElement ("Hotel Search");
-			PopulateRoot();
+			if(ResultReturned != null)
+				ResultReturned(requestCode, resultCode, data);
+			
+			//base.OnActivityResult (requestCode, resultCode, data);
 		}
+		public abstract void CreateRoot();
 	}
 }
 

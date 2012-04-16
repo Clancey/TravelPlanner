@@ -24,23 +24,28 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using MonoDroid.Dialog;
-using Android.Graphics;
-using Android.Content.PM;
-
 namespace TravelPlanner
 {
-	[Activity (Label = "Hotel Search",ScreenOrientation = ScreenOrientation.Portrait, MainLauncher = true )]
-	public partial class HotelSearchController : BaseActivity
+	class DialogView : ListView
 	{
-		public void Search()
+		public DialogView(Activity context,RootElement root) : base(context)
 		{
-
+			LayoutParameters = new LayoutParams(LayoutParams.FillParent,LayoutParams.FillParent);
+			/*
+			LayoutParameters.Width = LayoutParams.FillParent;
+			LayoutParameters.Height = LayoutParams.FillParent;
+			*/
+			Root = root;
 		}
-		public override void CreateRoot ()
+		
+		private RootElement root;
+		public RootElement Root {get{return root;}set{root = value;SetRoot();}}
+		private DialogHelper dialogHelper {get;set;}
+		
+		private void SetRoot()
 		{
-			Root = new RootElement ("Hotel Search");
-			PopulateRoot();
+			this.CacheColorHint = 0;
+			dialogHelper = new DialogHelper(Context,this,root);
 		}
 	}
 }
-
