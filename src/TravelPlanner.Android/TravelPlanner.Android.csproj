@@ -50,6 +50,7 @@
       <HintPath>..\..\lib\TravelPlanner.Core.dll</HintPath>
     </Reference>
     <Reference Include="OpenTK" />
+    <Reference Include="Mono.Android.GoogleMaps" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Resources\Resource.designer.cs" />
@@ -62,6 +63,7 @@
     </Compile>
     <Compile Include="UI\BaseActivity.cs" />
     <Compile Include="UI\DialogView.cs" />
+    <Compile Include="Activity.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -69,7 +71,6 @@
     <None Include="Properties\AndroidManifest.xml" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\layout\Main.axml" />
     <AndroidResource Include="Resources\values\Strings.xml" />
     <AndroidResource Include="Resources\drawable\Icon.png" />
     <AndroidResource Include="Resources\drawable\btn_black.xml" />
@@ -98,6 +99,8 @@
     <AndroidResource Include="Resources\layout\dialog_textarea.xml" />
     <AndroidResource Include="Resources\layout\dialog_textfieldbelow.xml" />
     <AndroidResource Include="Resources\layout\dialog_textfieldright.xml" />
+    <AndroidResource Include="Resources\layout\BaseActivity.axml" />
+    <AndroidResource Include="Resources\layout\TabLayout.axml" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
   <ItemGroup>

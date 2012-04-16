@@ -13,12 +13,23 @@ using Android.Widget;
 
 namespace TravelPlanner
 {
-	[Activity (Label = "Activity")]			
-	public class Activity : Activity
+
+	[Activity (Label = "Travel Planner", Theme="@android:style/Theme.NoTitleBar", MainLauncher = true )]			
+	public class Activity1 : TabActivity
 	{
 		protected override void OnCreate (Bundle bundle)
 		{
 			base.OnCreate (bundle);
+			
+			SetContentView (Resource.Layout.TabLayout);
+			TabHost.TabSpec spec;
+			var intent = new Intent(this,typeof(HotelSearchController));
+			spec = TabHost.NewTabSpec("hotels");
+			spec.SetContent(intent);
+			spec.SetIndicator("Hotels");
+			TabHost.AddTab(spec);
+
+
 
 			// Create your application here
 		}

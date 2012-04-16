@@ -39,7 +39,7 @@ namespace TravelPlanner
 		{
 			base.OnCreate (bundle);
 			//Settings.Setup(this);
-			SetContentView (Resource.Layout.Main);			
+			SetContentView (Resource.Layout.BaseActivity);			
 			LayoutControl = FindViewById<LinearLayout> (Resource.Id.linerLayout);
 			CreateRoot();
 			var dv = new DialogView(this,Root);

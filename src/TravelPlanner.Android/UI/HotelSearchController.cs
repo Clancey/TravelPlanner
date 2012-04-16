@@ -29,7 +29,7 @@ using Android.Content.PM;
 
 namespace TravelPlanner
 {
-	[Activity (Label = "Hotel Search",ScreenOrientation = ScreenOrientation.Portrait, MainLauncher = true )]
+	[Activity (Label = "Hotel Search",ScreenOrientation = ScreenOrientation.Portrait)]
 	public partial class HotelSearchController : BaseActivity
 	{
 		public void Search()

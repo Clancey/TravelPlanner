@@ -1,36 +1,5 @@
-
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-using Android.App;
-using Android.Content;
-using Android.OS;
-using Android.Runtime;
-using Android.Util;
-using Android.Views;
-using Android.Widget;
-
-namespace TravelPlanner
-{
-	public class BaseActivity : View
-	{
-		public BaseActivity (Context context, IAttributeSet attrs) :
-			base (context, attrs)
-		{
-			Initialize ();
-		}
-
-		public BaseActivity (Context context, IAttributeSet attrs, int defStyle) :
-			base (context, attrs, defStyle)
-		{
-			Initialize ();
-		}
-
-		private void Initialize ()
-		{
-		}
-	}
-}
-
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent">
+	<LinearLayout android:id="@+id/linerLayout" android:layout_width="fill_parent" android:layout_height="fill_parent" android:orientation="vertical" android:layout_weight="1" xmlns:android="http://schemas.android.com/apk/res/android">
+	</LinearLayout>
+</LinearLayout>
