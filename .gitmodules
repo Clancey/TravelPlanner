@@ -1,0 +1,6 @@
+[submodule "ClanceyLib"]
+	path = ClanceyLib
+	url = https://github.com/Clancey/ClanceyLib.git
+[submodule "MonoDroid.Dialog"]
+	path = MonoDroid.Dialog
+	url = https://github.com/Clancey/MonoDroid.Dialog.git
