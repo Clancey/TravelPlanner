@@ -43,5 +43,9 @@
     <Compile Include="XmlParsers\HotelSearchParser.cs" />
     <Compile Include="XmlParsers\TravelTickerParser.cs" />
     <Compile Include="Data\Constants.cs" />
+    <Compile Include="Utils\Util.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Utils\" />
   </ItemGroup>
 </Project>

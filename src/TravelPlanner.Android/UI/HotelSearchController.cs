@@ -37,8 +37,8 @@ namespace TravelPlanner
 			var intent = new Intent(this, typeof(HotelViewController));
 			intent.PutExtra("SearchUrl",BuildSearchString());
 			StartActivity(intent);
-			
 		}
+		
 		public override void CreateRoot ()
 		{
 			Root = new RootElement ("Hotel Search");

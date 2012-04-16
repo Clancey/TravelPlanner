@@ -106,18 +106,110 @@ namespace TravelPlanner
 	public class CalendarElement : StringElement
 	{
 		public bool closeOnSelect;
-		public DateSelected OnDateSelected;
-		public DateTime DateValue;
-		public CalendarElement(string caption, DateTime date) : base (caption)
+		DatePickerDialog _dateDialog;
+		public EventHandler<DatePickerDialog.DateSetEventArgs> OnDateSelected;
+		
+		public DateTime DateValue { get; set; }
+		
+		public CalendarElement(string caption, DateTime dateValue) : base (caption)
 		{
-
+			this.DateValue = dateValue;			
 		}
+		
+		public override View GetView (Context context, View convertView, ViewGroup parent)
+		{
+			if(_dateDialog == null) {
+				_dateDialog = new DatePickerDialog(context, OnDateSet, DateValue.Year, DateValue.Month - 1, DateValue.Day);
+			}
+			
+			return base.GetView (context, convertView, parent);
+		}
+
+		public override void Selected ()
+		{
+			base.Selected ();
+			
+			var activity = this.GetContext() as Activity;
+			
+			if(activity != null && _dateDialog != null) {
+				_dateDialog.Show();
+			}
+			else { 
+				Console.WriteLine("Invalid Activity");
+			}
+		}
+		
+        void OnDateSet(object sender, DatePickerDialog.DateSetEventArgs e)
+        {
+            this.DateValue = e.Date;
+			
+			var activity = this.GetContext() as Activity;
+			
+			activity.RunOnUiThread(() => {
+				this.Value = string.Format("{0:MM/dd/yyyy}", DateValue.Date);
+			});
+        }
 	}
 
 	public class ComboBoxElement : StringElement
 	{
-		public ComboBoxElement(string caption, object[] Items , string DisplayMember) : base(caption)
+		AlertDialog _alertDialog;
+		string _caption = "";
+		string[] _itemArray;
+		
+		public ComboBoxElement(string caption, object[] items, string displayMember) : base(caption)
 		{
+			if(items == null) {
+				throw new ArgumentException("Invalid parameter 'items'.");
+			}
+			
+			if(items.Any() == false) {
+				throw new ArgumentException("Invalid parameter 'items'.");
+			}
+			
+			_caption = caption;
+			
+			if(string.IsNullOrWhiteSpace(displayMember)) {
+				_itemArray = items.Select(x=> x.ToString()).ToArray();
+			}
+			else {
+				_itemArray = items.Select(x => Util.GetPropertyValue(x, displayMember)).ToArray();
+			}
+			_itemArray.ToString();
+		}
+		
+		public override View GetView (Context context, View convertView, ViewGroup parent)
+		{
+			if(_itemArray.Any()) {
+				BuildDialog();
+			}
+			
+			return base.GetView (context, convertView, parent);
+		}
+		
+		public override void Selected ()
+		{
+			base.Selected ();
+			_alertDialog.Show();
+		}
+		
+		private void BuildDialog()
+		{
+			if(_alertDialog != null) {
+				return;
+			}
+			
+			var builder = new AlertDialog.Builder(this.GetContext());
+			builder.SetTitle(_caption);
+			
+
+			builder.SetItems(_itemArray, (o, e) => {
+				
+				Console.WriteLine("Selected: {0}", e.Which);
+				this.Value = _itemArray[e.Which];
+			});
+			
+			_alertDialog = builder.Create();
 		}
 	}
 
