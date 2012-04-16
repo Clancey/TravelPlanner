@@ -63,12 +63,354 @@
     </Compile>
     <Compile Include="UI\BaseActivity.cs" />
     <Compile Include="UI\DialogView.cs" />
-    <Compile Include="Activity.cs" />
+    <Compile Include="UI\CarSearchController.cs" />
+    <Compile Include="UI\HotelViewController.cs" />
+    <Compile Include="UI\TravelTickerController.cs" />
+    <Compile Include="UI\TravelTickerMainController.cs" />
+    <Compile Include="MainActivity.cs" />
+    <Compile Include="UI\HotelDetailController.cs" />
+    <Compile Include="UI\TravelTickerDetailController.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
     <None Include="Assets\AboutAssets.txt" />
     <None Include="Properties\AndroidManifest.xml" />
+    <None Include="..\TravelPlanner.iOS\Images\loading\1.png">
+      <Link>Resources\drawable\loading\1.png</Link>
+    </None>
+    <None Include="..\TravelPlanner.iOS\Images\loading\10.png">
+      <Link>Resources\drawable\loading\10.png</Link>
+    </None>
+    <None Include="..\TravelPlanner.iOS\Images\loading\100.png">
+      <Link>Resources\drawable\loading\100.png</Link>
+    </None>
+    <None Include="..\TravelPlanner.iOS\Images\loading\101.png">
+      <Link>Resources\drawable\loading\101.png</Link>
+    </None>
+    <None Include="..\TravelPlanner.iOS\Images\loading\102.png">
+      <Link>Resources\drawable\loading\102.png</Link>
+    </None>
+    <None Include="..\TravelPlanner.iOS\Images\loading\103.png">
+      <Link>Resources\drawable\loading\103.png</Link>
+    </None>
+    <None Include="..\TravelPlanner.iOS\Images\loading\104.png">
+      <Link>Resources\drawable\loading\104.png</Link>
+    </None>
+    <None Include="..\TravelPlanner.iOS\Images\loading\105.png">
+      <Link>Resources\drawable\loading\105.png</Link>
+    </None>
+    <None Include="..\TravelPlanner.iOS\Images\loading\106.png">
+      <Link>Resources\drawable\loading\106.png</Link>
+    </None>
+    <None Include="..\TravelPlanner.iOS\Images\loading\107.png">
+      <Link>Resources\drawable\loading\107.png</Link>
+    </None>
+    <None Include="..\TravelPlanner.iOS\Images\loading\108.png">
+      <Link>Resources\drawable\loading\108.png</Link>
+    </None>
+    <None Include="..\TravelPlanner.iOS\Images\loading\109.png">
+      <Link>Resources\drawable\loading\109.png</Link>
+    </None>
+    <None Include="..\TravelPlanner.iOS\Images\loading\11.png">
+      <Link>Resources\drawable\loading\11.png</Link>
+    </None>
+    <None Include="..\TravelPlanner.iOS\Images\loading\110.png">
+      <Link>Resources\drawable\loading\110.png</Link>
+    </None>
+    <None Include="..\TravelPlanner.iOS\Images\loading\111.png">
+      <Link>Resources\drawable\loading\111.png</Link>
+    </None>
+    <None Include="..\TravelPlanner.iOS\Images\loading\112.png">
+      <Link>Resources\drawable\loading\112.png</Link>
+    </None>
+    <None Include="..\TravelPlanner.iOS\Images\loading\12.png">
+      <Link>Resources\drawable\loading\12.png</Link>
+    </None>
+    <None Include="..\TravelPlanner.iOS\Images\loading\13.png">
+      <Link>Resources\drawable\loading\13.png</Link>
+    </None>
+    <None Include="..\TravelPlanner.iOS\Images\loading\14.png">
+      <Link>Resources\drawable\loading\14.png</Link>
+    </None>
+    <None Include="..\TravelPlanner.iOS\Images\loading\15.png">
+      <Link>Resources\drawable\loading\15.png</Link>
+    </None>
+    <None Include="..\TravelPlanner.iOS\Images\loading\16.png">
+      <Link>Resources\drawable\loading\16.png</Link>
+    </None>
+    <None Include="..\TravelPlanner.iOS\Images\loading\17.png">
+      <Link>Resources\drawable\loading\17.png</Link>
+    </None>
+    <None Include="..\TravelPlanner.iOS\Images\loading\18.png">
+      <Link>Resources\drawable\loading\18.png</Link>
+    </None>
+    <None Include="..\TravelPlanner.iOS\Images\loading\19.png">
+      <Link>Resources\drawable\loading\19.png</Link>
+    </None>
+    <None Include="..\TravelPlanner.iOS\Images\loading\2.png">
+      <Link>Resources\drawable\loading\2.png</Link>
+    </None>
+    <None Include="..\TravelPlanner.iOS\Images\loading\20.png">
+      <Link>Resources\drawable\loading\20.png</Link>
+    </None>
+    <None Include="..\TravelPlanner.iOS\Images\loading\21.png">
+      <Link>Resources\drawable\loading\21.png</Link>
+    </None>
+    <None Include="..\TravelPlanner.iOS\Images\loading\22.png">
+      <Link>Resources\drawable\loading\22.png</Link>
+    </None>
+    <None Include="..\TravelPlanner.iOS\Images\loading\23.png">
+      <Link>Resources\drawable\loading\23.png</Link>
+    </None>
+    <None Include="..\TravelPlanner.iOS\Images\loading\24.png">
+      <Link>Resources\drawable\loading\24.png</Link>
+    </None>
+    <None Include="..\TravelPlanner.iOS\Images\loading\25.png">
+      <Link>Resources\drawable\loading\25.png</Link>
+    </None>
+    <None Include="..\TravelPlanner.iOS\Images\loading\26.png">
+      <Link>Resources\drawable\loading\26.png</Link>
+    </None>
+    <None Include="..\TravelPlanner.iOS\Images\loading\27.png">
+      <Link>Resources\drawable\loading\27.png</Link>
+    </None>
+    <None Include="..\TravelPlanner.iOS\Images\loading\28.png">
+      <Link>Resources\drawable\loading\28.png</Link>
+    </None>
+    <None Include="..\TravelPlanner.iOS\Images\loading\29.png">
+      <Link>Resources\drawable\loading\29.png</Link>
+    </None>
+    <None Include="..\TravelPlanner.iOS\Images\loading\3.png">
+      <Link>Resources\drawable\loading\3.png</Link>
+    </None>
+    <None Include="..\TravelPlanner.iOS\Images\loading\30.png">
+      <Link>Resources\drawable\loading\30.png</Link>
+    </None>
+    <None Include="..\TravelPlanner.iOS\Images\loading\31.png">
+      <Link>Resources\drawable\loading\31.png</Link>
+    </None>
+    <None Include="..\TravelPlanner.iOS\Images\loading\32.png">
+      <Link>Resources\drawable\loading\32.png</Link>
+    </None>
+    <None Include="..\TravelPlanner.iOS\Images\loading\33.png">
+      <Link>Resources\drawable\loading\33.png</Link>
+    </None>
+    <None Include="..\TravelPlanner.iOS\Images\loading\34.png">
+      <Link>Resources\drawable\loading\34.png</Link>
+    </None>
+    <None Include="..\TravelPlanner.iOS\Images\loading\35.png">
+      <Link>Resources\drawable\loading\35.png</Link>
+    </None>
+    <None Include="..\TravelPlanner.iOS\Images\loading\36.png">
+      <Link>Resources\drawable\loading\36.png</Link>
+    </None>
+    <None Include="..\TravelPlanner.iOS\Images\loading\37.png">
+      <Link>Resources\drawable\loading\37.png</Link>
+    </None>
+    <None Include="..\TravelPlanner.iOS\Images\loading\38.png">
+      <Link>Resources\drawable\loading\38.png</Link>
+    </None>
+    <None Include="..\TravelPlanner.iOS\Images\loading\39.png">
+      <Link>Resources\drawable\loading\39.png</Link>
+    </None>
+    <None Include="..\TravelPlanner.iOS\Images\loading\4.png">
+      <Link>Resources\drawable\loading\4.png</Link>
+    </None>
+    <None Include="..\TravelPlanner.iOS\Images\loading\40.png">
+      <Link>Resources\drawable\loading\40.png</Link>
+    </None>
+    <None Include="..\TravelPlanner.iOS\Images\loading\41.png">
+      <Link>Resources\drawable\loading\41.png</Link>
+    </None>
+    <None Include="..\TravelPlanner.iOS\Images\loading\42.png">
+      <Link>Resources\drawable\loading\42.png</Link>
+    </None>
+    <None Include="..\TravelPlanner.iOS\Images\loading\43.png">
+      <Link>Resources\drawable\loading\43.png</Link>
+    </None>
+    <None Include="..\TravelPlanner.iOS\Images\loading\44.png">
+      <Link>Resources\drawable\loading\44.png</Link>
+    </None>
+    <None Include="..\TravelPlanner.iOS\Images\loading\45.png">
+      <Link>Resources\drawable\loading\45.png</Link>
+    </None>
+    <None Include="..\TravelPlanner.iOS\Images\loading\46.png">
+      <Link>Resources\drawable\loading\46.png</Link>
+    </None>
+    <None Include="..\TravelPlanner.iOS\Images\loading\47.png">
+      <Link>Resources\drawable\loading\47.png</Link>
+    </None>
+    <None Include="..\TravelPlanner.iOS\Images\loading\48.png">
+      <Link>Resources\drawable\loading\48.png</Link>
+    </None>
+    <None Include="..\TravelPlanner.iOS\Images\loading\49.png">
+      <Link>Resources\drawable\loading\49.png</Link>
+    </None>
+    <None Include="..\TravelPlanner.iOS\Images\loading\5.png">
+      <Link>Resources\drawable\loading\5.png</Link>
+    </None>
+    <None Include="..\TravelPlanner.iOS\Images\loading\50.png">
+      <Link>Resources\drawable\loading\50.png</Link>
+    </None>
+    <None Include="..\TravelPlanner.iOS\Images\loading\51.png">
+      <Link>Resources\drawable\loading\51.png</Link>
+    </None>
+    <None Include="..\TravelPlanner.iOS\Images\loading\52.png">
+      <Link>Resources\drawable\loading\52.png</Link>
+    </None>
+    <None Include="..\TravelPlanner.iOS\Images\loading\53.png">
+      <Link>Resources\drawable\loading\53.png</Link>
+    </None>
+    <None Include="..\TravelPlanner.iOS\Images\loading\54.png">
+      <Link>Resources\drawable\loading\54.png</Link>
+    </None>
+    <None Include="..\TravelPlanner.iOS\Images\loading\55.png">
+      <Link>Resources\drawable\loading\55.png</Link>
+    </None>
+    <None Include="..\TravelPlanner.iOS\Images\loading\56.png">
+      <Link>Resources\drawable\loading\56.png</Link>
+    </None>
+    <None Include="..\TravelPlanner.iOS\Images\loading\57.png">
+      <Link>Resources\drawable\loading\57.png</Link>
+    </None>
+    <None Include="..\TravelPlanner.iOS\Images\loading\58.png">
+      <Link>Resources\drawable\loading\58.png</Link>
+    </None>
+    <None Include="..\TravelPlanner.iOS\Images\loading\59.png">
+      <Link>Resources\drawable\loading\59.png</Link>
+    </None>
+    <None Include="..\TravelPlanner.iOS\Images\loading\6.png">
+      <Link>Resources\drawable\loading\6.png</Link>
+    </None>
+    <None Include="..\TravelPlanner.iOS\Images\loading\60.png">
+      <Link>Resources\drawable\loading\60.png</Link>
+    </None>
+    <None Include="..\TravelPlanner.iOS\Images\loading\61.png">
+      <Link>Resources\drawable\loading\61.png</Link>
+    </None>
+    <None Include="..\TravelPlanner.iOS\Images\loading\62.png">
+      <Link>Resources\drawable\loading\62.png</Link>
+    </None>
+    <None Include="..\TravelPlanner.iOS\Images\loading\63.png">
+      <Link>Resources\drawable\loading\63.png</Link>
+    </None>
+    <None Include="..\TravelPlanner.iOS\Images\loading\64.png">
+      <Link>Resources\drawable\loading\64.png</Link>
+    </None>
+    <None Include="..\TravelPlanner.iOS\Images\loading\65.png">
+      <Link>Resources\drawable\loading\65.png</Link>
+    </None>
+    <None Include="..\TravelPlanner.iOS\Images\loading\66.png">
+      <Link>Resources\drawable\loading\66.png</Link>
+    </None>
+    <None Include="..\TravelPlanner.iOS\Images\loading\67.png">
+      <Link>Resources\drawable\loading\67.png</Link>
+    </None>
+    <None Include="..\TravelPlanner.iOS\Images\loading\68.png">
+      <Link>Resources\drawable\loading\68.png</Link>
+    </None>
+    <None Include="..\TravelPlanner.iOS\Images\loading\69.png">
+      <Link>Resources\drawable\loading\69.png</Link>
+    </None>
+    <None Include="..\TravelPlanner.iOS\Images\loading\7.png">
+      <Link>Resources\drawable\loading\7.png</Link>
+    </None>
+    <None Include="..\TravelPlanner.iOS\Images\loading\70.png">
+      <Link>Resources\drawable\loading\70.png</Link>
+    </None>
+    <None Include="..\TravelPlanner.iOS\Images\loading\71.png">
+      <Link>Resources\drawable\loading\71.png</Link>
+    </None>
+    <None Include="..\TravelPlanner.iOS\Images\loading\72.png">
+      <Link>Resources\drawable\loading\72.png</Link>
+    </None>
+    <None Include="..\TravelPlanner.iOS\Images\loading\73.png">
+      <Link>Resources\drawable\loading\73.png</Link>
+    </None>
+    <None Include="..\TravelPlanner.iOS\Images\loading\74.png">
+      <Link>Resources\drawable\loading\74.png</Link>
+    </None>
+    <None Include="..\TravelPlanner.iOS\Images\loading\75.png">
+      <Link>Resources\drawable\loading\75.png</Link>
+    </None>
+    <None Include="..\TravelPlanner.iOS\Images\loading\76.png">
+      <Link>Resources\drawable\loading\76.png</Link>
+    </None>
+    <None Include="..\TravelPlanner.iOS\Images\loading\77.png">
+      <Link>Resources\drawable\loading\77.png</Link>
+    </None>
+    <None Include="..\TravelPlanner.iOS\Images\loading\78.png">
+      <Link>Resources\drawable\loading\78.png</Link>
+    </None>
+    <None Include="..\TravelPlanner.iOS\Images\loading\79.png">
+      <Link>Resources\drawable\loading\79.png</Link>
+    </None>
+    <None Include="..\TravelPlanner.iOS\Images\loading\8.png">
+      <Link>Resources\drawable\loading\8.png</Link>
+    </None>
+    <None Include="..\TravelPlanner.iOS\Images\loading\80.png">
+      <Link>Resources\drawable\loading\80.png</Link>
+    </None>
+    <None Include="..\TravelPlanner.iOS\Images\loading\81.png">
+      <Link>Resources\drawable\loading\81.png</Link>
+    </None>
+    <None Include="..\TravelPlanner.iOS\Images\loading\82.png">
+      <Link>Resources\drawable\loading\82.png</Link>
+    </None>
+    <None Include="..\TravelPlanner.iOS\Images\loading\83.png">
+      <Link>Resources\drawable\loading\83.png</Link>
+    </None>
+    <None Include="..\TravelPlanner.iOS\Images\loading\84.png">
+      <Link>Resources\drawable\loading\84.png</Link>
+    </None>
+    <None Include="..\TravelPlanner.iOS\Images\loading\85.png">
+      <Link>Resources\drawable\loading\85.png</Link>
+    </None>
+    <None Include="..\TravelPlanner.iOS\Images\loading\86.png">
+      <Link>Resources\drawable\loading\86.png</Link>
+    </None>
+    <None Include="..\TravelPlanner.iOS\Images\loading\87.png">
+      <Link>Resources\drawable\loading\87.png</Link>
+    </None>
+    <None Include="..\TravelPlanner.iOS\Images\loading\88.png">
+      <Link>Resources\drawable\loading\88.png</Link>
+    </None>
+    <None Include="..\TravelPlanner.iOS\Images\loading\89.png">
+      <Link>Resources\drawable\loading\89.png</Link>
+    </None>
+    <None Include="..\TravelPlanner.iOS\Images\loading\9.png">
+      <Link>Resources\drawable\loading\9.png</Link>
+    </None>
+    <None Include="..\TravelPlanner.iOS\Images\loading\90.png">
+      <Link>Resources\drawable\loading\90.png</Link>
+    </None>
+    <None Include="..\TravelPlanner.iOS\Images\loading\91.png">
+      <Link>Resources\drawable\loading\91.png</Link>
+    </None>
+    <None Include="..\TravelPlanner.iOS\Images\loading\92.png">
+      <Link>Resources\drawable\loading\92.png</Link>
+    </None>
+    <None Include="..\TravelPlanner.iOS\Images\loading\93.png">
+      <Link>Resources\drawable\loading\93.png</Link>
+    </None>
+    <None Include="..\TravelPlanner.iOS\Images\loading\94.png">
+      <Link>Resources\drawable\loading\94.png</Link>
+    </None>
+    <None Include="..\TravelPlanner.iOS\Images\loading\95.png">
+      <Link>Resources\drawable\loading\95.png</Link>
+    </None>
+    <None Include="..\TravelPlanner.iOS\Images\loading\96.png">
+      <Link>Resources\drawable\loading\96.png</Link>
+    </None>
+    <None Include="..\TravelPlanner.iOS\Images\loading\97.png">
+      <Link>Resources\drawable\loading\97.png</Link>
+    </None>
+    <None Include="..\TravelPlanner.iOS\Images\loading\98.png">
+      <Link>Resources\drawable\loading\98.png</Link>
+    </None>
+    <None Include="..\TravelPlanner.iOS\Images\loading\99.png">
+      <Link>Resources\drawable\loading\99.png</Link>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\values\Strings.xml" />
@@ -101,11 +443,39 @@
     <AndroidResource Include="Resources\layout\dialog_textfieldright.xml" />
     <AndroidResource Include="Resources\layout\BaseActivity.axml" />
     <AndroidResource Include="Resources\layout\TabLayout.axml" />
+    <AndroidResource Include="..\TravelPlanner.iOS\Images\back.png">
+      <Link>Resources\drawable\back.png</Link>
+    </AndroidResource>
+    <AndroidResource Include="..\TravelPlanner.iOS\Images\car_icon.png">
+      <Link>Resources\drawable\car_icon.png</Link>
+    </AndroidResource>
+    <AndroidResource Include="..\TravelPlanner.iOS\Images\closex.png">
+      <Link>Resources\drawable\closex.png</Link>
+    </AndroidResource>
+    <AndroidResource Include="..\TravelPlanner.iOS\Images\forward.png">
+      <Link>Resources\drawable\forward.png</Link>
+    </AndroidResource>
+    <AndroidResource Include="..\TravelPlanner.iOS\Images\hotwireLogo.png">
+      <Link>Resources\drawable\hotwireLogo.png</Link>
+    </AndroidResource>
+    <AndroidResource Include="..\TravelPlanner.iOS\Images\leftImage.png">
+      <Link>Resources\drawable\leftImage.png</Link>
+    </AndroidResource>
+    <AndroidResource Include="..\TravelPlanner.iOS\Images\paper.png">
+      <Link>Resources\drawable\paper.png</Link>
+    </AndroidResource>
+    <AndroidResource Include="..\TravelPlanner.iOS\Images\Star.png">
+      <Link>Resources\drawable\Star.png</Link>
+    </AndroidResource>
+    <AndroidResource Include="..\TravelPlanner.iOS\Images\StarHalf.png">
+      <Link>Resources\drawable\StarHalf.png</Link>
+    </AndroidResource>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
   <ItemGroup>
     <Folder Include="UI\" />
     <Folder Include="Shared\" />
+    <Folder Include="Resources\drawable\loading\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\MonoDroid.Dialog\MonoDroid.Dialog\MonoDroid.Dialog.csproj">
