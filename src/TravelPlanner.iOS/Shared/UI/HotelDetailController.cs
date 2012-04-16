@@ -41,11 +41,9 @@ namespace TravelPlanner
 			};
 			
 			var detailsSection = new Section("Details");
-			
-			var description =
-				new MultilineElement("",_deal.Neighborhood.Description);
+
 			if(!string.IsNullOrEmpty(_deal.Neighborhood.Description))
-				detailsSection.Add(description);
+				detailsSection.Add(new MultilineElement(_deal.Neighborhood.Description,""));
 			
 			var mapElement = new StringElement("Map",delegate {
 				showMap();

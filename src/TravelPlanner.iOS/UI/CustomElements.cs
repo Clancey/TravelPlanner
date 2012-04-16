@@ -305,7 +305,8 @@ namespace TravelPlanner
 				lblSub = new UILabel { TextAlignment = UITextAlignment.Left, Text = parent.Deal.Neighborhood.Description, Font = subFont, BackgroundColor = UIColor.Clear };
 				UpdateLeftImage(parent.Deal);
 				ContentView.Add (label);
-				ContentView.Add (lblSub);
+				if(parent.IncludeDetails)
+					ContentView.Add (lblSub);
 				ContentView.Add (leftView);
 			}
 
@@ -334,8 +335,10 @@ namespace TravelPlanner
 					height = 17;
 				frame.Height = height + 10;
 
-
-				frame.Y = 5;
+				if(Parent.IncludeDetails)
+					frame.Y = 5;
+				else
+					frame.Y = (full.Height - frame.Height) / 2;
 				label.Frame = frame;
 				var subFrame = frame;
 				subFrame.Y += frame.Height;
