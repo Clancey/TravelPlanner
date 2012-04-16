@@ -69,7 +69,9 @@ namespace TravelPlanner
 			if (view != null) {
 				button.Text = Caption;
 				if (Click != null)
-					button.Click += Click;
+					button.Click += delegate {
+						Click();
+					};
 			}
 			button.SetTextColor (_textColor);
 			switch (_color) {
