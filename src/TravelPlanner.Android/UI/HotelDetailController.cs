@@ -34,7 +34,9 @@ namespace TravelPlanner
 		}
 		private void purchase()
 		{
-
+			Intent intent = new Intent(Intent.ActionView, 
+			Android.Net.Uri.Parse(_deal.Url));
+			StartActivity(intent);	
 		}
 		private void showMap()
 		{

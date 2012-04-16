@@ -43,6 +43,8 @@ namespace TravelPlanner
 		private void ResultClicked(HotelResult deal)
 		{
 			StateManager.SetObject("CurrentHotelResult",deal);
+			var intent = new Intent(this, typeof(HotelDetailController));
+			StartActivity(intent);
 		}
 	}
 }
