@@ -14,8 +14,7 @@
 //    limitations under the License.
 using System;
 using System.Drawing;
-using TravelPlanner.TravelTicker;
-using System.Threading.Tasks;
+using TravelPlanner.HotelSearch;
 #if MONOTOUCH
 using MonoTouch.Dialog;
 using ClanceysLib;
@@ -23,34 +22,22 @@ using ClanceysLib;
 using MonoDroid.Dialog;
 #endif
 using System.Globalization;
+using System.Threading.Tasks;
 namespace TravelPlanner
 {
-	public partial class TravelTickerController
+	public partial class TravelTickerMainController
 	{
-		
-		string Url;
-		TravelTickerSearchResults result;
-		private void GetData ()
+		private void PopulateRoot()
 		{
-			Task.Factory.StartNew (() => {
-				result = DataAccess.FetchTravelTickerResults (Url);
-				GetDataComplete ();
-			});
-		}
-		
-		private void PopulateRoot ()
-		{
-			Section section = new Section();
-			if(result == null)
-				return;
-			foreach(var deal in result.Result)
-			{
-				section.Add(new TravelTickerDealElement(deal));	
-			}
 
-			this.Root.Clear();
+			var section = new Section()
+			{
+				new StringElement("Top Deals", () => {
+					ShowDeals(Constants.TravelTickerUrl,"Top Deals");
+				})
+			};
+			
 			this.Root.Add(section);
-			this.ReloadData();
 		}
 	}
 }

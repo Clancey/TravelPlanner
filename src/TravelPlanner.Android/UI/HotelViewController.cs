@@ -33,7 +33,9 @@ namespace TravelPlanner
 		}
 		private void GetDataComplete()
 		{
-			PopulateRoot();
+			this.RunOnUiThread(delegate{
+				PopulateRoot();
+			});
 		}
 		private void LoadingComplete()
 		{

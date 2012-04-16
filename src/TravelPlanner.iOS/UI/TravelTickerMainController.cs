@@ -2,7 +2,7 @@ using System;
 using MonoTouch.Dialog;
 namespace TravelPlanner
 {
-	public class TravelTickerMainController : DialogViewController
+	public partial class TravelTickerMainController : DialogViewController
 	{
 		public TravelTickerMainController (bool pushing) 
 			: base(new RootElement("Travel Ticket"), pushing)
@@ -12,16 +12,7 @@ namespace TravelPlanner
 		public override void ViewDidLoad ()
 		{
 			base.ViewDidLoad ();
-			
-			var section = new Section()
-			{
-				new StringElement("Top Deals", () => {
-					this.ActivateController(new TravelTickerController(Constants.TravelTickerUrl,"Top Deals",true));	
-				})
-			};
-			
-			this.Root.Add(section);
-			
+			PopulateRoot();
 			this.TableView.BackgroundView = new BackGroundView(Theme.BackgroundImage,null,100);
 		}
 		
@@ -29,6 +20,11 @@ namespace TravelPlanner
 		{
 			base.ViewWillAppear (animated);			
 			this.NavigationController.NavigationBar.TintColor = Theme.NavigationTint;
+		}
+
+		private void ShowDeals(string url, string title)
+		{
+			this.ActivateController(new TravelTickerController(url,title,true));	
 		}
 	}
 }

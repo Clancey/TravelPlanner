@@ -47,5 +47,9 @@ namespace TravelPlanner
 			this.CacheColorHint = 0;
 			dialogHelper = new DialogHelper(Context,this,root);
 		}
+		public void ReloadData()
+		{
+			dialogHelper.ReloadData();
+		}
 	}
 }

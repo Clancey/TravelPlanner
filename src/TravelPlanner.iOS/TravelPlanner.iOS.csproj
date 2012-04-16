@@ -106,6 +106,7 @@
     <Compile Include="Shared\UI\HotelViewController.cs" />
     <Compile Include="Shared\UI\HotelDetailController.cs" />
     <Compile Include="Shared\UI\TravelTickerController.cs" />
+    <Compile Include="Shared\UI\TravelTickerMainController.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>

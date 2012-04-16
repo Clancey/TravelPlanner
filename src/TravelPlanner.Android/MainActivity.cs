@@ -35,7 +35,9 @@ namespace TravelPlanner
 			spec.SetIndicator("Cars");
 			TabHost.AddTab(spec);
 			
-			intent = new Intent(this,typeof(TravelTickerMainController));
+			intent = new Intent(this,typeof(TravelTickerController));
+			intent.PutExtra("TravelTickerUrl",Constants.TravelTickerUrl);
+			intent.PutExtra("Title","Top Deals");
 			spec = TabHost.NewTabSpec("travel");
 			spec.SetContent(intent);
 			spec.SetIndicator("Travel-Ticker");

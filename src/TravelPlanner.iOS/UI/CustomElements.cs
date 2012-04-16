@@ -225,7 +225,7 @@ namespace TravelPlanner
 		public override void Selected (DialogViewController dvc, UITableView tableView, NSIndexPath path)
 		{
 			base.Selected (dvc, tableView, path);
-			var url = Constants.TravelTickerUrl + "&theme=" + Theme.ThemeId;
+			var url = Constants.TravelTickerUrl + "&shouldbackfill=false&theme=" + Theme.ThemeId;
 			dvc.ActivateController (new TravelTickerController (url, Theme.ThemeName, true));	
 		}
 	}

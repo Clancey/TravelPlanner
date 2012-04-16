@@ -23,7 +23,7 @@ namespace TravelPlanner
 		public RotatingTabBar TabBar;
 		public UINavigationController [] navigationRoots;
 		HotelSearchController hotelVC;
-		TravelTickerMainController travelTickerVC;
+		TravelTickerController travelTickerVC;
 		CarSearchController carVC;
 		// This method is invoked when the application has loaded its UI and its ready to run
 		public override bool FinishedLaunching (UIApplication app, NSDictionary options)
@@ -31,7 +31,7 @@ namespace TravelPlanner
 			window = new UIWindow(UIScreen.MainScreen.Bounds);
 			TabBar = new RotatingTabBar(2);
 			hotelVC = new  HotelSearchController();
-			travelTickerVC = new TravelTickerMainController(false);
+			travelTickerVC = new TravelTickerController(Constants.TravelTickerUrl,"Travel-Ticker",true);
 			carVC = new CarSearchController();
 			navigationRoots = new UINavigationController[3] {
 				

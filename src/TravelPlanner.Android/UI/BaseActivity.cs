@@ -42,7 +42,7 @@ namespace TravelPlanner
 			SetContentView (Resource.Layout.BaseActivity);			
 			LayoutControl = FindViewById<LinearLayout> (Resource.Id.linerLayout);
 			CreateRoot();
-			var dv = new DialogView(this,Root);
+			dv = new DialogView(this,Root);
 			LayoutControl.AddView (dv);
 		}
 		protected override void OnActivityResult (int requestCode, Result resultCode, Intent data)
@@ -53,6 +53,10 @@ namespace TravelPlanner
 			//base.OnActivityResult (requestCode, resultCode, data);
 		}
 		public abstract void CreateRoot();
+		public void ReloadData()
+		{
+			dv.ReloadData();
+		}
 	}
 }
 

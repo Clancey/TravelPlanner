@@ -234,5 +234,13 @@ namespace TravelPlanner
 		{
 		}
 	}
+	public class TravelTickerDealElement : StringElement
+	{
+		TravelPlanner.TravelTicker.TravelTickerDeal Deal;
+		public TravelTickerDealElement (TravelPlanner.TravelTicker.TravelTickerDeal deal) : base (deal.Title)
+		{
+			Deal = deal;
+		}
+	}
 }
 

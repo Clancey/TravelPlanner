@@ -8,10 +8,8 @@ namespace TravelPlanner
 {
 	public partial class TravelTickerController : MyDialogViewController
 	{
-		TravelTickerSearchResults result;
 		MBProgressHUD loading; 
-		string Url;
-		public TravelTickerController (string url,string title,bool pushing) : base(null,pushing)
+		public TravelTickerController (string url,string title,bool pushing) : base(new RootElement("Travel-Ticker"),pushing)
 		{
 			Url = url;
 			this.Style = UITableViewStyle.Plain;
@@ -34,36 +32,20 @@ namespace TravelPlanner
 			}
 			
 			if(result == null)
-				Refresh();
+			{
+				loading.Show(true);
+				GetData();
+			}
 		}
-		private void Refresh()
+
+		private void GetDataComplete()
 		{
-			loading.Show(true);
-			Thread thread = new Thread(update);	
-			thread.Start();
-		}
-		
-		private void update()
-		{
-			result = DataAccess.FetchTravelTickerResults(Url);
-			this.InvokeOnMainThread(delegate{
-				ReloadUI();
+		this.InvokeOnMainThread(delegate{
+				PopulateRoot();
+				loading.Hide(true);
 			});
 		}
-		private void ReloadUI()
-		{
-			Console.WriteLine("update complete");
-			Section section = new Section();
-			foreach(var deal in result.Result)
-			{
-				Console.WriteLine("adding deal");
-				section.Add(new TravelTickerDealElement(deal));	
-			}
-			Console.WriteLine("creating root");
-			Root = new RootElement("Travel-Ticker"){section};
-			loading.Hide(true);
-			Console.WriteLine("reload complete");
-		}
+
 	}
 }
 

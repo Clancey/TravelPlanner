@@ -15,18 +15,28 @@ using MonoDroid.Dialog;
 namespace TravelPlanner
 {
 	[Activity (Label = "TravelTickerController")]			
-	public class TravelTickerController : BaseActivity
+	public partial class TravelTickerController : BaseActivity
 	{
+		string title;
 		protected override void OnCreate (Bundle bundle)
 		{
+			Url = Intent.GetStringExtra("TravelTickerUrl");
+			title = Intent.GetStringExtra("Title");
 			base.OnCreate (bundle);
 
 		}
 		
 		public override void CreateRoot ()
 		{
-			Root = new RootElement ("Travel-Ticker"){new Section()};
-			//PopulateRoot();
+			Root = new RootElement (title){new Section()};
+			GetData();
+		}
+
+		private void GetDataComplete()
+		{
+			this.RunOnUiThread(delegate{
+				PopulateRoot();
+			});
 		}
 	}
 }
