@@ -62,8 +62,8 @@ public static class StateManager
 			currentState = (Dictionary<string,object>) formatter.Deserialize(stream);
 			stream.Close();
 		}
-		
 	}
+	
 	private static void saveState()
 	{
 		var formatter = new BinaryFormatter();

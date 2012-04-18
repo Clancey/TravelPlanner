@@ -113,7 +113,8 @@ namespace TravelPlanner
 		
 		public CalendarElement(string caption, DateTime dateValue) : base (caption)
 		{
-			this.DateValue = dateValue;			
+			this.DateValue = dateValue;
+			this.Value = string.Format("{0:MM/dd/yyyy}", DateValue.Date);
 		}
 		
 		public override View GetView (Context context, View convertView, ViewGroup parent)
@@ -202,8 +203,6 @@ namespace TravelPlanner
 				return;
 			}
 			
-			
-			
 			var builder = new AlertDialog.Builder(this.GetContext());
 			builder.SetTitle(_caption);
 			
@@ -220,9 +219,15 @@ namespace TravelPlanner
 
 	public class HotelResultElement : StringElement
 	{
-		public HotelResultElement(TravelPlanner.HotelSearch.HotelResult result,bool include,Action tapped) : base(result.Title,result.AveragePricePerNight.ToString("C2"))
+		public HotelResultElement(TravelPlanner.HotelSearch.HotelResult result,bool include,Action tapped) 
+			: base(result.Title,result.AveragePricePerNight.ToString("C2"), tapped)
 		{
 
+		}
+		
+		public override void Selected ()
+		{
+			base.Selected();
 		}
 	}
 	public class HotelAmenityElement : StringElement
@@ -245,6 +250,42 @@ namespace TravelPlanner
 		public TravelTickerDealElement (TravelPlanner.TravelTicker.TravelTickerDeal deal) : base (deal.Title)
 		{
 			Deal = deal;
+		}
+	}
+	
+	public class AwesomeEntryElement : StringElement
+	{
+		EditText _entry;
+		
+		public AwesomeEntryElement(string caption, string @value) : base(caption, @value)
+		{
+			
+		}
+		
+		public override View GetView (Context context, View convertView, ViewGroup parent)
+		{
+			if(_entry == null) {
+				_entry = new EditText(context);
+			}
+			
+			return base.GetView(context, convertView, parent);
+		}
+		
+		public override void Selected ()
+		{
+			base.Selected ();
+			
+			var context = this.GetContext();
+			var entryDialog = new AlertDialog.Builder(context)
+				.SetTitle("Enter Text")
+				.SetView(_entry)
+				.SetPositiveButton("OK", (o, e) => {
+						this.Value = _entry.Text;
+				})
+				.Create();
+			
+			entryDialog.Show();
+			
 		}
 	}
 }

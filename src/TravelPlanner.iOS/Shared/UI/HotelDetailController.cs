@@ -37,7 +37,7 @@ namespace TravelPlanner
 			var buttonElementSection = new Section() {
 				new ButtonElement("Purchase", TravelPlanner.Theme.IconColor, delegate {
 					purchase();	
-				})
+				}) 
 			};
 			
 			var detailsSection = new Section("Details");
@@ -78,6 +78,9 @@ namespace TravelPlanner
 				totalPrice,
 			};
 			
+			
+			this.Root.Clear();
+			
 			Root.Add(new Section[] {
 				headerSection,
 				buttonElementSection,
@@ -86,6 +89,10 @@ namespace TravelPlanner
 				additionalInfoSection,
 				
 			});
+			
+			
+			
+			
 		}
 	}
 }

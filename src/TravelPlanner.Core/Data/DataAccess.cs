@@ -25,6 +25,7 @@ namespace TravelPlanner
 				
 		public static TravelPlanner.HotelSearch.HotelSearchResults FetchHotelSearchResults (string url)
 		{
+			Console.WriteLine(url);
 			string formattedUri = String.Format (CultureInfo.InvariantCulture, url);
 			string jsonResponse = GetWebsiteData (formattedUri);
 			var result = HotelSearchParser.Parse (jsonResponse);

@@ -23,6 +23,7 @@ namespace TravelPlanner
 		{
 			base.OnCreate (bundle);
 			Deal = (HotelResult)StateManager.GetObject("CurrentHotelResult");
+			Console.WriteLine(_deal.Title);
 			// Create your application here
 		}
 
@@ -30,7 +31,8 @@ namespace TravelPlanner
 		public override void CreateRoot ()
 		{
 			Root = new RootElement ("Details"){new Section()};
-			//PopulateRoot();
+			PopulateRoot();
+			LoadingComplete();
 		}
 		private void purchase()
 		{
@@ -41,6 +43,13 @@ namespace TravelPlanner
 		private void showMap()
 		{
 
+		}
+		
+		private void LoadingComplete()
+		{
+			RunOnUiThread(() => {
+				this.ReloadData();
+			});
 		}
 	}
 }

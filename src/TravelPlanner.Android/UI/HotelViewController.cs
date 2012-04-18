@@ -39,7 +39,7 @@ namespace TravelPlanner
 		}
 		private void LoadingComplete()
 		{
-
+			this.ReloadData();
 		}
 		
 		private void ResultClicked(HotelResult deal)
