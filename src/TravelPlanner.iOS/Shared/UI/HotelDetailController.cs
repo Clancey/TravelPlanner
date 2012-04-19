@@ -31,8 +31,10 @@ namespace TravelPlanner
 		
 		HotelResult _deal;
 		private void PopulateRoot()
-		{
-			var headerSection = new Section(){new HotelResultElement(_deal,false,null)};
+		{			
+			var headerSection = new Section(){
+				new HotelResultElement(_deal,false,null)
+			};
 			
 			var buttonElementSection = new Section() {
 				new ButtonElement("Purchase", TravelPlanner.Theme.IconColor, delegate {
@@ -42,8 +44,10 @@ namespace TravelPlanner
 			
 			var detailsSection = new Section("Details");
 
-			if(!string.IsNullOrEmpty(_deal.Neighborhood.Description))
-				detailsSection.Add(new MultilineElement(_deal.Neighborhood.Description,""));
+			if(string.IsNullOrWhiteSpace(_deal.Neighborhood.Description) == false) {
+				Console.WriteLine(_deal.Neighborhood.Description);
+				detailsSection.Add(new StringElement(_deal.Neighborhood.Description,""));
+			}
 			
 			var mapElement = new StringElement("Map",delegate {
 				showMap();
@@ -78,8 +82,6 @@ namespace TravelPlanner
 				totalPrice,
 			};
 			
-			
-			this.Root.Clear();
 			
 			Root.Add(new Section[] {
 				headerSection,

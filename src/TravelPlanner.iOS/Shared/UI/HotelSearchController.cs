@@ -34,6 +34,8 @@ namespace TravelPlanner
 			#elif MONODROID
 				destElement = new AwesomeEntryElement("Destination", "");
 			#endif
+			
+			destElement.Value = isDemo ? "" : "San Francisco, CA";
 
 			//destElement.TextAlignment = UITextAlignment.Right;
 			startDateElement = new CalendarElement ("Check-in", DateTime.Today.AddMonths(1));
@@ -90,8 +92,8 @@ namespace TravelPlanner
 		private ComboBoxElement createRoomsElement()
 		{
 			var element = new ComboBoxElement("Rooms", new object[]{1,2,3,4,5,6},"");
+//			element.Value = isDemo ? "" : "1";
 			
-			destElement.Value = isDemo ? "" : "San Francisco, CA";
 			
 			return element;
 		}
@@ -99,7 +101,7 @@ namespace TravelPlanner
 		private ComboBoxElement createAdultsElement()
 		{
 			var element = new ComboBoxElement("Adults", new object[]{1,2,3,4},"");
-			
+//			element.Value = isDemo ? "" : "1";
 			
 			return element;
 		}
@@ -107,7 +109,7 @@ namespace TravelPlanner
 		private ComboBoxElement createChildrenElement()
 		{
 			var element = new ComboBoxElement("Children", new object[]{0,1,2},"");
-			
+//			element.Value = isDemo ? "" : "0";
 			
 			return element;
 		}

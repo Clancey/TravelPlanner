@@ -12,27 +12,32 @@ using Android.Views;
 using Android.Widget;
 using MonoDroid.Dialog;
 using TravelPlanner.HotelSearch;
+using System.Threading.Tasks;
 
 namespace TravelPlanner
 {
 	[Activity (Label = "Details")]			
 	public partial class HotelDetailController : BaseActivity
 	{
-		HotelResult Deal;
-		protected override void OnCreate (Bundle bundle)
+		protected override void OnCreate (Bundle savedInstanceState)
 		{
-			base.OnCreate (bundle);
-			Deal = (HotelResult)StateManager.GetObject("CurrentHotelResult");
-			Console.WriteLine(_deal.Title);
-			// Create your application here
+			base.OnCreate (savedInstanceState);
+			
 		}
-
+		
 		
 		public override void CreateRoot ()
 		{
-			Root = new RootElement ("Details"){new Section()};
-			PopulateRoot();
-			LoadingComplete();
+			_deal = StateManager.GetObject("CurrentHotelResult") as HotelResult;
+			Console.WriteLine(_deal.Title);
+			
+			Root = new RootElement ("Details") { new Section() };
+			
+			Task.Factory.StartNew(() => {
+				PopulateRoot();
+				LoadingComplete();
+			});
+			
 		}
 		private void purchase()
 		{
@@ -40,6 +45,7 @@ namespace TravelPlanner
 			Android.Net.Uri.Parse(_deal.Url));
 			StartActivity(intent);	
 		}
+		
 		private void showMap()
 		{
 

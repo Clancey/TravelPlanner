@@ -18,11 +18,16 @@ namespace TravelPlanner
 	[Activity (Label = "HotelViewController")]			
 	public partial class HotelViewController : BaseActivity
 	{
+		ProgressDialog _progressDialog;
+		
 		protected override void OnCreate (Bundle bundle)
 		{
 			base.OnCreate (bundle);
-
 			_url = Intent.GetStringExtra("SearchUrl");
+			
+			_progressDialog = new ProgressDialog(this);
+			_progressDialog.SetTitle("Loading");
+			_progressDialog.Show();
 		}
 
 		
@@ -40,6 +45,7 @@ namespace TravelPlanner
 		private void LoadingComplete()
 		{
 			this.ReloadData();
+			_progressDialog.Dismiss();
 		}
 		
 		private void ResultClicked(HotelResult deal)
