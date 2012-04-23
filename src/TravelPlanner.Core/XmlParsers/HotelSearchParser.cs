@@ -57,7 +57,9 @@ namespace TravelPlanner
 		
 		private static Coordinate parseLatLong (XElement element)
 		{
-			string[] values = element.Value.Split(new char[]{char.Parse(",")});
+		    char returnChar;
+		    char.TryParse(",", out returnChar);
+            string[] values = element.Value.Split(new char[] { returnChar});
 			return new Coordinate(double.Parse(values[0]),double.Parse(values[1]));
 		}
 		

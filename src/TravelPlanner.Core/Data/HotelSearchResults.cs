@@ -1,5 +1,7 @@
 using System;
 using System.Collections.Generic;
+using System.Globalization;
+
 #if MONOTOUCH
 using MonoTouch.CoreLocation;
 #endif
@@ -60,6 +62,17 @@ namespace TravelPlanner.HotelSearch
 				return title;
 			}
 		}
+	    public string AveragePricePerNightString
+	    {
+            get
+            {
+                return AveragePricePerNight.ToString("C0",CultureInfo.CurrentCulture);
+            }
+	    }
+        public float StarRatingFloat
+        {
+            get { return (float)(StarRating/5.0); }
+        }
 	}
 	
 	public class Neighborhood

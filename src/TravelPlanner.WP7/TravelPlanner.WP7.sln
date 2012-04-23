@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TravelPlanner.WP7", "TravelPlanner.WP7.csproj", "{2DE9BA27-903A-4F59-BC25-1E5CF9E67331}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TravelPlanner.Core.WP7", "..\TravelPlanner.Core\TravelPlanner.Core.WP7.csproj", "{D834846E-A569-47DF-83F0-CD65D79C379A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2DE9BA27-903A-4F59-BC25-1E5CF9E67331}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2DE9BA27-903A-4F59-BC25-1E5CF9E67331}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2DE9BA27-903A-4F59-BC25-1E5CF9E67331}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{2DE9BA27-903A-4F59-BC25-1E5CF9E67331}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2DE9BA27-903A-4F59-BC25-1E5CF9E67331}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2DE9BA27-903A-4F59-BC25-1E5CF9E67331}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{D834846E-A569-47DF-83F0-CD65D79C379A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D834846E-A569-47DF-83F0-CD65D79C379A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D834846E-A569-47DF-83F0-CD65D79C379A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D834846E-A569-47DF-83F0-CD65D79C379A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
