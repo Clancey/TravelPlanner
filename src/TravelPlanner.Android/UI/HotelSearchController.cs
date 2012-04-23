@@ -35,7 +35,8 @@ namespace TravelPlanner
 		public void Search()
 		{
 			var intent = new Intent(this, typeof(HotelViewController));
-			intent.PutExtra("SearchUrl",BuildSearchString());
+			var searchString = BuildSearchString();
+			intent.PutExtra("SearchUrl",searchString);
 			StartActivity(intent);
 		}
 		

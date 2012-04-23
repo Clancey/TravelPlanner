@@ -23,7 +23,6 @@ namespace TravelPlanner
 		protected override void OnCreate (Bundle bundle)
 		{
 			base.OnCreate (bundle);
-			_url = Intent.GetStringExtra("SearchUrl");
 			
 			_progressDialog = new ProgressDialog(this);
 			_progressDialog.SetTitle("Loading");
@@ -33,6 +32,7 @@ namespace TravelPlanner
 		
 		public override void CreateRoot ()
 		{
+			_url = Intent.GetStringExtra("SearchUrl");
 			Root = new RootElement ("Search Results"){new Section()};
 			GetData();
 		}
